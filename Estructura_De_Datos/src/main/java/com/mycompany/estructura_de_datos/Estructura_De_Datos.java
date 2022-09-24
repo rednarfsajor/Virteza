@@ -12,6 +12,7 @@ package com.mycompany.estructura_de_datos;
 public class Estructura_De_Datos {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        int num=Clase1.Factorial(10);
+        System.out.println(String.valueOf(num));
     }
 }
