@@ -5,14 +5,18 @@
 
 package com.mycompany.estructura_de_datos;
 
+import Semana2.Clase2;
+
 /**
  *
  * @author LABORATORIO
  */
 public class Estructura_De_Datos {
 
+    //SEMANA 2 FACTORIAL
+    
     public static void main(String[] args) {
-        int num=Clase1.Factorial(10);
+        int num=Clase2.Factorial(10);
         System.out.println(String.valueOf(num));
     }
 }

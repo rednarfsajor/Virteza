@@ -1,8 +1,8 @@
 
-package com.mycompany.estructura_de_datos;
+package Semana2;
 
 
-public class Clase1 {
+public class Clase2 {
  
     
     
