@@ -2,15 +2,15 @@
 package Semana2;
 
 
-public class Clase2 {
+public class Recursion {
  
     
     
-    public static int Factorial(int F){
+    public static int Factorial(int n){
         int result;
         
-        if(F>0){
-            result=F*Factorial(F-1);
+        if(n>0){
+            result=n*Factorial(n-1);
         }
         else{
             return 1;
