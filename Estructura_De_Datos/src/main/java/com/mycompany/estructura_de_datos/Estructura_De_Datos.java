@@ -6,6 +6,7 @@
 package com.mycompany.estructura_de_datos;
 
 import Semana2.Recursion;
+import Tarea_Recursividad.Recursividad;
 
 /**
  *
@@ -16,7 +17,20 @@ public class Estructura_De_Datos {
     //SEMANA 2 FACTORIAL
     
     public static void main(String[] args) {
+        /*
         int num=Recursion.Factorial(3);
         System.out.println(String.valueOf(num));
+*/
+        /*int n=Recursividad.N_Invertido(172,0);
+        System.out.println(n);*/
+        
+        Recursividad.Cadena_Impresa("Katherine", 0);
+        
+        int[] array={10,75,9,75};
+        
+        
     }
+    
+ 
+   
 }
