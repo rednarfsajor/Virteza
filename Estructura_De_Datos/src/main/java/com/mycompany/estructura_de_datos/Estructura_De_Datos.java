@@ -24,9 +24,14 @@ public class Estructura_De_Datos {
         /*int n=Recursividad.N_Invertido(172,0);
         System.out.println(n);*/
         
-        Recursividad.Cadena_Impresa("Katherine", 0);
+        /*Recursividad.Cadena_Impresa("Katherine", 0);
         
-        int[] array={10,75,9,75};
+        int[] array={10,75,9,75};*/
+        
+        /*String tablita;
+        tablita=Recursividad.TABLA(10,7);
+        System.out.println(tablita);*/
+        
         
         
     }

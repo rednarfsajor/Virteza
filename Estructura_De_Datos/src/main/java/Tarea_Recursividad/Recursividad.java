@@ -27,6 +27,18 @@ public class Recursividad {
       }
        
    }
-  
+   
+   public static String TABLA(int x, int y){
+       
+       if(x==1){
+           return y+" x " + 1 + "="+ y +"\n";
+       }
+       else{
+           int z;
+           z=x;
+           return TABLA(x-1,y)+y+" x "+ z + "=" + (y*z)+"\n";
+       }
+    
+   }
     
 }
