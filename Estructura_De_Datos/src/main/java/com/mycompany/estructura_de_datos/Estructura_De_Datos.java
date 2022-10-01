@@ -32,8 +32,18 @@ public class Estructura_De_Datos {
         tablita=Recursividad.TABLA(10,7);
         System.out.println(tablita);*/
         
+        /*int[] vector={1,2,3,4,5,6};
+        Recursividad.suma(vector, 0, 0);/*
+        
+        */
         
         
+        /*
+        int[] vector1={1,2,3,4,5,6};
+        int [] vector2={0,0,0,0,0,0};
+        Recursividad.VECTOR(vector1, 0, vector2);*/
+
+
     }
     
  

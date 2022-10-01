@@ -4,7 +4,7 @@ package Tarea_Recursividad;
 
 public class Recursividad {
     
-    
+   //Ejercicio 1 Numero invertido
    public static int N_Invertido(int n, int i){
        if(n>0){
            return N_Invertido(n/10,n%10+i*10);
@@ -16,6 +16,7 @@ public class Recursividad {
        
    }
    
+   //Ejercicio 2 Cadena impresa
    public static void Cadena_Impresa(String cadena, int i){
       if(i==cadena.length()-1){
           System.out.println(cadena.charAt(i));
@@ -28,6 +29,35 @@ public class Recursividad {
        
    }
    
+   //Ejercicio 3 Llenar vector
+    public static void VECTOR(int []vector, int index, int[] vectornuevo){
+        if(index==vector.length-1){
+            vectornuevo[index]=vector[index];
+            System.out.println(String.valueOf(vectornuevo[index]));
+        }
+        else{
+            vectornuevo[index]=vector[index];
+            System.out.println(String.valueOf(vectornuevo[index]));
+            VECTOR(vector,index+1,vectornuevo);
+        }
+   }
+   
+   //Ejercicio 4 Suma de numeros
+   
+   public static void suma(int [] vector, int index, int suma){
+       
+       if(index==vector.length-1){
+           suma+=vector[index];
+           System.out.println(String.valueOf(suma));
+       }
+       else{
+           suma+=vector[index];
+           suma(vector,index+1,suma);
+       }
+       
+   }
+   
+   //Ejercicio 5 tablas de multiplicar
    public static String TABLA(int x, int y){
        
        if(x==1){
