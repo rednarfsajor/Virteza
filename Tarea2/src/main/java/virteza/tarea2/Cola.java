@@ -8,15 +8,19 @@ public class Cola {
     
     public void Push(Persona human){
         NodoC newnodo=new NodoC(human);
-        if(Head==null){
-            Head=newnodo;
-            Tail=newnodo;
-            newnodo.setNext(null);
+        if(human.getHora()<20.00){
+            if(Head==null){
+                Head=newnodo;
+                Tail=newnodo;
+                newnodo.setNext(null);
+            }
+            else{
+                this.EncontrarLugar(newnodo, Head, Head);
+            }
         }
         else{
-            this.EncontrarLugar(newnodo, Head, Head);
+            System.out.println("Los datos de entrada no son correctos");
         }
-        
     }
     
     public void EncontrarLugar(NodoC newnodo, NodoC anterior,NodoC presente){
@@ -112,8 +116,8 @@ public class Cola {
     public String Mostrar(){
         String TODO="";
         TODO=Mostrar_Apartir(Head,TODO);
-        TODO="//TOP//\n"+TODO;
-        return TODO+"\n//BUTTOM//";
+        TODO="//HEAD//\n"+TODO;
+        return TODO+"\n//TAIL//";
     }
     
     

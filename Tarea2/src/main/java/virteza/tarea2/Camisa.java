@@ -9,13 +9,13 @@ public class Camisa {
     private String Marca;
     private String Confeccion;
     private String tipo;
-    private char Talla;
+    private String Talla;
     private String Color;
 
     public Camisa() {
     }
 
-    public Camisa(String Marca, String Confeccion, String tipo, char Talla, String Color) {
+    public Camisa(String Marca, String Confeccion, String tipo, String Talla, String Color) {
         this.Marca = Marca;
         this.Confeccion = Confeccion;
         this.tipo = tipo;
@@ -35,7 +35,7 @@ public class Camisa {
         return tipo;
     }
 
-    public char getTalla() {
+    public String getTalla() {
         return Talla;
     }
 

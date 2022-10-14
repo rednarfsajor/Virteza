@@ -6,11 +6,12 @@ public class Recursividad {
     
     
     
-    public static double Taylor(int x,int n, int i){
+    public static double Taylor(int x,int n, int N){
         double result=0;
-        if(i>0){
-            result+=(Math.pow(-1, n)/Factorial(2*n))*Math.pow(x,2*n);
-            result+=Taylor(x,n, i-1);
+        
+        if(N<n){
+            result+=(Math.pow(-1, N)/Factorial(2*N))*Math.pow(x,2*N);
+            result+=Taylor(x,n, N+1);
             return result;
         }
         else{

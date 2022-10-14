@@ -63,29 +63,29 @@ public class Pila {
             return "\n";
         }
     }
-        public char Reptalla(){
-            char TallaRep;
+        public String Reptalla(){
+            String TallaRep;
             TallaRep=Recorrer(Cima);
             
             
             return TallaRep;
         }
         
-        public static char Recorrer(NodoP nodo){
+        public static String Recorrer(NodoP nodo){
             int S=0;
             int M=0;
             int L=0;
             
             while(nodo!=null){
-                char talla = nodo.getShirt().getTalla();
+                String talla = nodo.getShirt().getTalla();
                 switch (talla){
-                   case 'S':
+                   case "S":
                        S+=1;
                        break;
-                   case 'M':
+                   case "M":
                        M+=1;
                        break;
-                   case 'L':
+                   case "L":
                        L+=1;
                        break; 
                 
@@ -93,28 +93,28 @@ public class Pila {
                 nodo=nodo.getNext();
             }
              if(S>M && S>L){
-                return 'S';
+                return "La talla que mas se repite es: [S]";
             }
             else if(M>S && M>L){
-                return 'M';
+                return "La talla que mas se repite es: [M]";
             }
             else if(L>S && L>M){
-                return 'L';
+                return "La talla que mas se repite es: [L]";
             }
             else if(S==M && S>L){
-                return 'n';
+                return "Las tallas que mas se repiten son: S & M";
             }
             else if(S==L &&  S>M){
-                return 'n';
+                return "Las tallas que mas se repiten son: S & L";
             }
             else if(M==L && M>S){
-                return 'n';
+                return "Las tallas que mas se repiten son: M & L";
             }
             else if(S==M && M==L){
-                return 'n';
+                return "Todas las tallas se repiten en mismas cantidades";
             }
             else{
-                return 'n';
+                return "NULL";
             }
         }
                
