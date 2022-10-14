@@ -11,11 +11,12 @@ public class Recursion {
         
         if(n>0){
             result=n*Factorial(n-1);
+            return result;
         }
         else{
             return 1;
         }
-       return result;
+       
     }
     
     
