@@ -8,7 +8,6 @@ public class Recursividad {
     
     public static double Taylor(int x,int n, int i){
         double result=0;
-        
         if(i>0){
             result+=(Math.pow(-1, n)/Factorial(2*n))*Math.pow(x,2*n);
             result+=Taylor(x,n, i-1);

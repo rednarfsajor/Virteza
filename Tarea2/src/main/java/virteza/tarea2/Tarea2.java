@@ -25,22 +25,16 @@ public class Tarea2 {
         Camisa Camisa6=new Camisa("BUNNY","CHINA","POLO",'S',"AMARILLA");
         Camisa Camisa7=new Camisa("NIKE","USA","SPORT",'M',"MORADO");
         
-        /*
+        
         Pila Pila_Camisas= new Pila();
-        Pila_Camisas.Push(Camisa7);
-        Pila_Camisas.Push(Camisa2);
-        Pila_Camisas.Push(Camisa1);
-        Pila_Camisas.Push(Camisa1);
-        Pila_Camisas.Push(Camisa6);
-        Pila_Camisas.Push(Camisa5);
-        Pila_Camisas.Push(Camisa3);
+        Pila_Camisas.Push(Camisa4);
         System.out.println(Pila_Camisas.Mostrar());
         
         System.out.println(Pila_Camisas.Reptalla());
-        */
-        //Ejercicio 3
         
-        Persona humano1=new Persona(402520190, "SOL", 13.00, "Heredia") ;
+        //Ejercicio 3
+        /*
+        Persona humano1=new Persona(402520190, "SOL", 13.00, "Heredia");
         Persona humano2=new Persona(402520191, "PALCO", 10.00, "San José") ;
         Persona humano3=new Persona(402520192, "SOMBRA", 13.00, "Alajuela") ;
         Persona humano4=new Persona(402520193, "PALCO", 13.00, "Heredia") ;
@@ -60,6 +54,6 @@ public class Tarea2 {
         System.out.println(Fila.Mostrar());
         System.out.println(Fila.pull().getHumano().getLocalidad());
         System.out.println(Fila.Mostrar());
-        
+        */
     }
 }

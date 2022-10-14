@@ -14,12 +14,11 @@ public class Pila {
         else{
             if(Cima.getShirt().getTalla() != Shirt.getTalla() && Cima.getShirt().getColor() != Shirt.getColor()){
                 if(Shirt.getMarca().equals("BUNNY")){
-                    NodoP Segundo=Cima.getNext();
-                    newNodo.setNext(Segundo);
+                    newNodo.setNext(Cima.getNext());
                     Cima.setNext(newNodo);
                 }
                 else{
-                     newNodo.setNext(Cima);
+                    newNodo.setNext(Cima);
                     Cima=newNodo;
                 }
                
@@ -66,13 +65,17 @@ public class Pila {
     }
         public char Reptalla(){
             char TallaRep;
-            TallaRep=Recorrer(Cima,0,0,0);
+            TallaRep=Recorrer(Cima);
             
             
             return TallaRep;
         }
         
-        public static char Recorrer(NodoP nodo, int S,  int M, int L){
+        public static char Recorrer(NodoP nodo){
+            int S=0;
+            int M=0;
+            int L=0;
+            
             while(nodo!=null){
                 char talla = nodo.getShirt().getTalla();
                 switch (talla){
@@ -97,6 +100,18 @@ public class Pila {
             }
             else if(L>S && L>M){
                 return 'L';
+            }
+            else if(S==M && S>L){
+                return 'n';
+            }
+            else if(S==L &&  S>M){
+                return 'n';
+            }
+            else if(M==L && M>S){
+                return 'n';
+            }
+            else if(S==M && M==L){
+                return 'n';
             }
             else{
                 return 'n';
