@@ -9,11 +9,11 @@ package A;
  * @author Rednarf
  */
 public class Plato {
-     private double ID;
+     private int ID;
      private boolean Cubiertos;
 
     public Plato() {
-        this.ID=(Math.random()*10000+1);
+        this.ID=(int)(Math.random()*10000+1);
     }
 
     public double getID() {
@@ -24,7 +24,7 @@ public class Plato {
         return Cubiertos;
     }
 
-    public void setID(double ID) {
+    public void setID(int ID) {
         this.ID = ID;
     }
 

@@ -75,7 +75,7 @@ public class Pila {
         if(nodo!=null){
             
             txt=Mostrar_Apartir2(nodo.getNext(),txt)+txt;
-            txt="\n["+String.valueOf(nodo.getValue2().getID())+"]["+String.valueOf(nodo.getValue2().isCubiertos())+"]"+txt;
+            txt="---------------------------\n[ID: "+String.valueOf(nodo.getValue2().getID())+"]\n[Cubiertos: "+String.valueOf(nodo.getValue2().isCubiertos())+"]\n"+txt;
             
             return txt;
         }

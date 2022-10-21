@@ -14,7 +14,6 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
      * Creates new form S
      */
     public Soda_Fide_Inicio() {
-        General.Ordenes=General.Llenar();
         initComponents();
     }
 
@@ -29,17 +28,15 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         Titulo = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        END = new javax.swing.JButton();
+        Agregar = new javax.swing.JButton();
+        Lavar = new javax.swing.JButton();
+        VerO = new javax.swing.JButton();
+        VerP = new javax.swing.JButton();
+        Atender = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
-        setUndecorated(true);
         setResizable(false);
         addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -61,110 +58,114 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
         Titulo.setText("SODA FIDE");
         jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 0));
-        jButton1.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("SALIR");
-        jButton1.setName(""); // NOI18N
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        END.setBackground(new java.awt.Color(255, 255, 0));
+        END.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        END.setForeground(new java.awt.Color(0, 0, 0));
+        END.setText("SALIR");
+        END.setName(""); // NOI18N
+        END.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                ENDMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        END.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ENDActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, -1));
+        jPanel1.add(END, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 0));
-        jButton2.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setText("AGREGAR ORDEN");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        Agregar.setBackground(new java.awt.Color(255, 255, 0));
+        Agregar.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        Agregar.setForeground(new java.awt.Color(0, 0, 0));
+        Agregar.setText("AGREGAR ORDEN");
+        Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton2MouseClicked(evt);
+                AgregarMouseClicked(evt);
             }
         });
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                AgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 0));
-        jButton3.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setText("LAVAR PLATOS");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        Lavar.setBackground(new java.awt.Color(255, 255, 0));
+        Lavar.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        Lavar.setForeground(new java.awt.Color(0, 0, 0));
+        Lavar.setText("LAVAR PLATOS");
+        Lavar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton3MouseClicked(evt);
+                LavarMouseClicked(evt);
             }
-        });
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, -1, -1));
-
-        jButton4.setBackground(new java.awt.Color(255, 255, 0));
-        jButton4.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setText("VER ORDENES PENDIENTES");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
-            }
-        });
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, -1));
-
-        jButton5.setBackground(new java.awt.Color(255, 255, 0));
-        jButton5.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 0));
-        jButton5.setText("VER PLATOS PARA LAVAR");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
-            }
-        });
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
-
-        jLabel1.setText("jLabel1");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel1MouseEntered(evt);
+                LavarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LavarMouseExited(evt);
             }
         });
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, -1));
-
-        jButton6.setBackground(new java.awt.Color(255, 255, 0));
-        jButton6.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setText("ATENDER ORDEN");
-        jButton6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton6MouseClicked(evt);
-            }
-        });
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        Lavar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                LavarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, -1, -1));
+        jPanel1.add(Lavar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
+
+        VerO.setBackground(new java.awt.Color(255, 255, 0));
+        VerO.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        VerO.setForeground(new java.awt.Color(0, 0, 0));
+        VerO.setText("VER ORDENES PENDIENTES");
+        VerO.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VerOMouseClicked(evt);
+            }
+        });
+        VerO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerOActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
+
+        VerP.setBackground(new java.awt.Color(255, 255, 0));
+        VerP.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        VerP.setForeground(new java.awt.Color(0, 0, 0));
+        VerP.setText("VER PLATOS PARA LAVAR");
+        VerP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VerPMouseClicked(evt);
+            }
+        });
+        VerP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerPActionPerformed(evt);
+            }
+        });
+        jPanel1.add(VerP, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
+
+        Atender.setBackground(new java.awt.Color(255, 255, 0));
+        Atender.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
+        Atender.setForeground(new java.awt.Color(0, 0, 0));
+        Atender.setText("ATENDER ORDEN");
+        Atender.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AtenderMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AtenderMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AtenderMouseExited(evt);
+            }
+        });
+        Atender.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AtenderActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Atender, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,50 +181,50 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ENDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ENDActionPerformed
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ENDActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_AgregarActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void LavarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LavarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_LavarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void VerOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerOActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_VerOActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void VerPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VerPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_VerPActionPerformed
 
-    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+    private void AgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AgregarMouseClicked
         
         Ingresar_Orden abrir=new Ingresar_Orden();
         
         abrir.setVisible(true);
-    }//GEN-LAST:event_jButton2MouseClicked
+    }//GEN-LAST:event_AgregarMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+    private void ENDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ENDMouseClicked
        System.exit(0);
-    }//GEN-LAST:event_jButton1MouseClicked
+    }//GEN-LAST:event_ENDMouseClicked
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+    private void VerOMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerOMouseClicked
         Ordenes_P abrir = new Ordenes_P();
         abrir.setVisible(true);
         
         abrir.setOrdenes(General.Ordenes.Mostrar());
-    }//GEN-LAST:event_jButton4MouseClicked
+    }//GEN-LAST:event_VerOMouseClicked
 
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+    private void VerPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VerPMouseClicked
         Platos_P abrir = new Platos_P();
         abrir.setVisible(true);
         
         abrir.setPlatos(General.Platos.Mostrar());
-    }//GEN-LAST:event_jButton5MouseClicked
+    }//GEN-LAST:event_VerPMouseClicked
 
     private void formFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_formFocusGained
        
@@ -233,27 +234,64 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jPanel1FocusGained
 
-    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
-         jLabel1.setText(String.valueOf(General.Platos.getTop().getValue2().getID()));
-    }//GEN-LAST:event_jLabel1MouseEntered
-
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    private void LavarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LavarMouseClicked
+       if(General.Platos.getTop()!=null){
         Plato_Lavado abrir=new Plato_Lavado();
         
         abrir.setVisible(true);
         abrir.setPlato(String.valueOf(General.Platos.LavarPlato().getValue2().getID()));
-    }//GEN-LAST:event_jButton3MouseClicked
+       }
+    }//GEN-LAST:event_LavarMouseClicked
 
-    private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
+    private void AtenderMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AtenderMouseClicked
+         if(General.Ordenes.getHead()!=null){
         Orden_Atendida abrir=new Orden_Atendida();
         
         abrir.setVisible(true);
         abrir.setOrden(General.Ordenes.AtenderOrder().getValue().getCliente());
-    }//GEN-LAST:event_jButton6MouseClicked
+        
+         }
+    }//GEN-LAST:event_AtenderMouseClicked
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void AtenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtenderActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_AtenderActionPerformed
+
+    private void AtenderMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AtenderMouseEntered
+        if(General.Ordenes.getHead()!=null){
+            Atender.setEnabled(true);
+        }
+        else{
+            Atender.setEnabled(false);
+        }
+    }//GEN-LAST:event_AtenderMouseEntered
+
+    private void AtenderMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AtenderMouseExited
+       if(General.Ordenes.getHead()!=null){
+            Atender.setEnabled(true);
+        }
+        else{
+            Atender.setEnabled(false);
+        }
+    }//GEN-LAST:event_AtenderMouseExited
+
+    private void LavarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LavarMouseEntered
+         if(General.Platos.getTop()!=null){
+            Lavar.setEnabled(true);
+        }
+        else{
+            Lavar.setEnabled(false);
+        }
+    }//GEN-LAST:event_LavarMouseEntered
+
+    private void LavarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LavarMouseExited
+         if(General.Platos.getTop()!=null){
+            Lavar.setEnabled(true);
+        }
+        else{
+            Lavar.setEnabled(false);
+        }
+    }//GEN-LAST:event_LavarMouseExited
 
     /**
      * @param args the command line arguments
@@ -292,14 +330,13 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Agregar;
+    private javax.swing.JButton Atender;
+    private javax.swing.JButton END;
+    private javax.swing.JButton Lavar;
     private javax.swing.JLabel Titulo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton VerO;
+    private javax.swing.JButton VerP;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

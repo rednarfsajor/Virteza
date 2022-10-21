@@ -53,17 +53,20 @@ public class Cola {
             Head=Head.getNext();
             Plato plato = new Plato();
             switch(Aux.getValue().getProducto()){
-                case 1:
+                case "Casado Carne":
                     plato.setCubiertos(true);
                     break;
-                case 2:
+                case "Casado Pescado":
                     plato.setCubiertos(true);
                     break;
-                case 3:
+                case "Cantones":
+                    plato.setCubiertos(false);
+                    break;
+                case "Pollo Frito":
                     plato.setCubiertos(false);
                     break;
                 default:
-                    plato.setCubiertos(true);
+                    plato.setCubiertos(false);
                     break;
             }
             General.Platos.ApilarPlato(plato);
@@ -81,7 +84,7 @@ public class Cola {
     public static String Mostrar_Apartir(Nodo nodo, String txt){
         if(nodo!=null){
             txt=Mostrar_Apartir(nodo.getNext(),txt)+txt;
-            txt="\n["+nodo.getValue().getCliente()+"]["+String.valueOf(nodo.getValue().getCedula())+"]["+String.valueOf(nodo.getValue().getProducto())+"]["+String.valueOf(nodo.getValue().getTotal())+"]["+String.valueOf(nodo.getValue().isDiscapacidad())+"]"+txt;
+            txt="---------------------------\n[Nombre: "+nodo.getValue().getCliente()+"]\n[Cedula: "+String.valueOf(nodo.getValue().getCedula())+"]\n[Orden: "+nodo.getValue().getProducto()+"]\n[Total: "+String.valueOf(nodo.getValue().getTotal())+"]\n[Discapacidad: "+String.valueOf(nodo.getValue().isDiscapacidad())+"]\n"+txt;
             
             return txt;
         }

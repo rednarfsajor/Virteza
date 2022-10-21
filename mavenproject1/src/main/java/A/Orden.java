@@ -10,7 +10,7 @@ package A;
  */
 public class Orden {
 
-    public Orden(String Cliente, int Cedula, int Producto, double Total, boolean Discapacidad) {
+    public Orden(String Cliente, int Cedula, String Producto, double Total, boolean Discapacidad) {
         this.Cliente = Cliente;
         this.Cedula = Cedula;
         this.Producto = Producto;
@@ -19,7 +19,7 @@ public class Orden {
     }
      private String Cliente;
     private int Cedula;
-    private int Producto;
+    private String Producto;
     private double Total;
     private boolean Discapacidad;
 
@@ -31,7 +31,7 @@ public class Orden {
         return Cedula;
     }
 
-    public int getProducto() {
+    public String getProducto() {
         return Producto;
     }
 

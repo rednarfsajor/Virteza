@@ -26,6 +26,7 @@ public class Ingresar_Orden extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jCheckBox1 = new javax.swing.JCheckBox();
         jLabel1 = new javax.swing.JLabel();
         nombreCliente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -34,8 +35,12 @@ public class Ingresar_Orden extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         total = new javax.swing.JTextField();
         ok = new javax.swing.JButton();
-        Comida = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         Discapacidad = new javax.swing.JCheckBox();
+        canvas1 = new java.awt.Canvas();
+        Advertencia = new javax.swing.JLabel();
+
+        jCheckBox1.setText("jCheckBox1");
 
         jLabel1.setText("Nombre del cliente");
 
@@ -71,10 +76,15 @@ public class Ingresar_Orden extends javax.swing.JFrame {
             }
         });
 
-        Comida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casado Carne", "Casado Pescado", "Cantones", "Pollo Frito" }));
-        Comida.addItemListener(new java.awt.event.ItemListener() {
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casado Carne", "Casado Pescado", "Cantones", "Pollo Frito" }));
+        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                ComidaItemStateChanged(evt);
+                jComboBox1ItemStateChanged(evt);
+            }
+        });
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
             }
         });
 
@@ -84,6 +94,9 @@ public class Ingresar_Orden extends javax.swing.JFrame {
                 DiscapacidadActionPerformed(evt);
             }
         });
+
+        Advertencia.setForeground(new java.awt.Color(255, 0, 0));
+        Advertencia.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,41 +112,64 @@ public class Ingresar_Orden extends javax.swing.JFrame {
                             .addComponent(jLabel4)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Discapacidad))
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(nombreCliente)
-                            .addComponent(cedula)
-                            .addComponent(total)
-                            .addComponent(Comida, 0, 146, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(nombreCliente)
+                                    .addComponent(cedula)
+                                    .addComponent(total)
+                                    .addComponent(jComboBox1, 0, 146, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Advertencia)
+                                .addGap(29, 29, 29))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(142, 142, 142)
-                        .addComponent(ok)))
+                        .addGap(153, 153, 153)
+                        .addComponent(ok)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
+                    .addComponent(cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(Comida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(Discapacidad)
-                .addGap(18, 18, 18)
-                .addComponent(ok)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addComponent(Discapacidad)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(21, 21, 21)
+                                .addComponent(ok)
+                                .addGap(21, 21, 21))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(canvas1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(36, 36, 36))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(Advertencia)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         pack();
@@ -149,8 +185,8 @@ public class Ingresar_Orden extends javax.swing.JFrame {
 
     }//GEN-LAST:event_okActionPerformed
 
-    private void ComidaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComidaItemStateChanged
-        switch(Comida.getSelectedItem().toString()){
+    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
+        switch(jComboBox1.getSelectedItem().toString()){
             case "Casado Carne":
                 total.setText("9000");
                 break;
@@ -164,38 +200,33 @@ public class Ingresar_Orden extends javax.swing.JFrame {
                 total.setText("1000");
                 break;
         }
-    }//GEN-LAST:event_ComidaItemStateChanged
+    }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     private void okMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_okMouseClicked
+        try{
         String cliente=nombreCliente.getText();
         int ced=Integer.parseInt(cedula.getText());
-        int type=0;
-        switch(Comida.getSelectedItem().toString()){
-            case "Casado Carne":
-                type=1;
-                break;
-            case "Casado Pescado":
-               type=2;
-                break;
-           case "Cantones":
-                type=3;
-                break;
-           case "Pollo Frito":
-                type=4;
-                break;
-        }
+        String type=jComboBox1.getSelectedItem().toString();
         int Total=Integer.parseInt(total.getText());
         boolean dis;
-        dis = Discapacidad.isSelected();
-        
+        dis=Discapacidad.isSelected();
         Orden nuevaorden=new Orden(cliente,ced,type,Total,dis);
         General.Ordenes.AgregarOrden(nuevaorden);
+        Advertencia.setText("");
         this.setVisible(false);
+        }
+        catch(Exception ex){
+            Advertencia.setText("Los datos ingresados son inválidos");
+        }
     }//GEN-LAST:event_okMouseClicked
 
     private void DiscapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiscapacidadActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_DiscapacidadActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -233,9 +264,12 @@ public class Ingresar_Orden extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> Comida;
+    private javax.swing.JLabel Advertencia;
     private javax.swing.JCheckBox Discapacidad;
+    private java.awt.Canvas canvas1;
     private javax.swing.JTextField cedula;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
