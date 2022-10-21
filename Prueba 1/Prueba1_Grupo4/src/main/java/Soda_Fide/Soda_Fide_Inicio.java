@@ -112,7 +112,7 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 51));
 
         VerP.setBackground(new java.awt.Color(255, 255, 255));
-        VerP.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        VerP.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         VerP.setForeground(new java.awt.Color(0, 0, 153));
         VerP.setText("VER PLATOS PARA LAVAR");
         VerP.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -168,7 +168,7 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(Lavar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
                 .addComponent(VerP)
                 .addGap(79, 79, 79))
         );
@@ -178,7 +178,7 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 255, 51));
 
         VerO.setBackground(new java.awt.Color(255, 255, 255));
-        VerO.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        VerO.setFont(new java.awt.Font("Roboto", 1, 16)); // NOI18N
         VerO.setForeground(new java.awt.Color(0, 0, 153));
         VerO.setText("VER ORDENES PENDIENTES");
         VerO.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -223,19 +223,19 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addComponent(Atender, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(VerO, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(10, Short.MAX_VALUE))
+                        .addComponent(VerO, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(Atender, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addComponent(Atender)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 144, Short.MAX_VALUE)
                 .addComponent(VerO)
                 .addGap(75, 75, 75))
         );
