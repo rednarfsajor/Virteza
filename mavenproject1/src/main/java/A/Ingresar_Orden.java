@@ -34,7 +34,8 @@ public class Ingresar_Orden extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         total = new javax.swing.JTextField();
         ok = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Comida = new javax.swing.JComboBox<>();
+        Discapacidad = new javax.swing.JCheckBox();
 
         jLabel1.setText("Nombre del cliente");
 
@@ -70,10 +71,17 @@ public class Ingresar_Orden extends javax.swing.JFrame {
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casado Carne", "Casado Pescado", "Cantones", "Pollo Frito" }));
-        jComboBox1.addItemListener(new java.awt.event.ItemListener() {
+        Comida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Casado Carne", "Casado Pescado", "Cantones", "Pollo Frito" }));
+        Comida.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox1ItemStateChanged(evt);
+                ComidaItemStateChanged(evt);
+            }
+        });
+
+        Discapacidad.setText("Discapacidad");
+        Discapacidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DiscapacidadActionPerformed(evt);
             }
         });
 
@@ -89,43 +97,43 @@ public class Ingresar_Orden extends javax.swing.JFrame {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Discapacidad))
                         .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nombreCliente)
                             .addComponent(cedula)
                             .addComponent(total)
-                            .addComponent(jComboBox1, 0, 146, Short.MAX_VALUE)))
+                            .addComponent(Comida, 0, 146, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
+                        .addGap(142, 142, 142)
                         .addComponent(ok)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(22, 22, 22)
+                .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(26, 26, 26)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(cedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Comida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addComponent(Discapacidad)
+                .addGap(18, 18, 18)
                 .addComponent(ok)
-                .addGap(43, 43, 43))
+                .addContainerGap())
         );
 
         pack();
@@ -141,8 +149,8 @@ public class Ingresar_Orden extends javax.swing.JFrame {
 
     }//GEN-LAST:event_okActionPerformed
 
-    private void jComboBox1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox1ItemStateChanged
-        switch(jComboBox1.getSelectedItem().toString()){
+    private void ComidaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_ComidaItemStateChanged
+        switch(Comida.getSelectedItem().toString()){
             case "Casado Carne":
                 total.setText("9000");
                 break;
@@ -156,13 +164,13 @@ public class Ingresar_Orden extends javax.swing.JFrame {
                 total.setText("1000");
                 break;
         }
-    }//GEN-LAST:event_jComboBox1ItemStateChanged
+    }//GEN-LAST:event_ComidaItemStateChanged
 
     private void okMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_okMouseClicked
         String cliente=nombreCliente.getText();
         int ced=Integer.parseInt(cedula.getText());
         int type=0;
-        switch(jComboBox1.getSelectedItem().toString()){
+        switch(Comida.getSelectedItem().toString()){
             case "Casado Carne":
                 type=1;
                 break;
@@ -177,11 +185,17 @@ public class Ingresar_Orden extends javax.swing.JFrame {
                 break;
         }
         int Total=Integer.parseInt(total.getText());
-        boolean dis=false;
+        boolean dis;
+        dis = Discapacidad.isSelected();
         
         Orden nuevaorden=new Orden(cliente,ced,type,Total,dis);
         General.Ordenes.AgregarOrden(nuevaorden);
+        this.setVisible(false);
     }//GEN-LAST:event_okMouseClicked
+
+    private void DiscapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DiscapacidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DiscapacidadActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,8 +233,9 @@ public class Ingresar_Orden extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Comida;
+    private javax.swing.JCheckBox Discapacidad;
     private javax.swing.JTextField cedula;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
