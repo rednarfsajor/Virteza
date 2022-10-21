@@ -30,11 +30,14 @@ public class Platos_P extends javax.swing.JFrame {
         jTextArea1 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 51));
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jLabel1.setFont(new java.awt.Font("Consolas", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 153));
         jLabel1.setText("Platos por lavar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

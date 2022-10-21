@@ -19,12 +19,15 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Titulo = new javax.swing.JLabel();
         END = new javax.swing.JButton();
         Agregar = new javax.swing.JButton();
-        Lavar = new javax.swing.JButton();
-        VerO = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        Titulo = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         VerP = new javax.swing.JButton();
+        Lavar = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        VerO = new javax.swing.JButton();
         Atender = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -35,8 +38,9 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
                 formFocusGained(evt);
             }
         });
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setName(""); // NOI18N
         jPanel1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -45,15 +49,11 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
         });
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Titulo.setFont(new java.awt.Font("Consolas", 1, 36)); // NOI18N
-        Titulo.setForeground(new java.awt.Color(0, 204, 204));
-        Titulo.setText("SODA FIDE");
-        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
-
-        END.setBackground(new java.awt.Color(255, 255, 0));
-        END.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        END.setForeground(new java.awt.Color(0, 0, 0));
+        END.setBackground(new java.awt.Color(204, 0, 0));
+        END.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        END.setForeground(new java.awt.Color(255, 255, 255));
         END.setText("SALIR");
+        END.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(0, 0, 0)));
         END.setName(""); // NOI18N
         END.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -65,12 +65,13 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
                 ENDActionPerformed(evt);
             }
         });
-        jPanel1.add(END, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 350, -1, -1));
+        jPanel1.add(END, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 320, 100, 40));
 
-        Agregar.setBackground(new java.awt.Color(255, 255, 0));
-        Agregar.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        Agregar.setForeground(new java.awt.Color(0, 0, 0));
+        Agregar.setBackground(new java.awt.Color(0, 0, 153));
+        Agregar.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        Agregar.setForeground(new java.awt.Color(255, 255, 51));
         Agregar.setText("AGREGAR ORDEN");
+        Agregar.setBorder(javax.swing.BorderFactory.createMatteBorder(3, 3, 3, 3, new java.awt.Color(255, 255, 51)));
         Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AgregarMouseClicked(evt);
@@ -81,12 +82,56 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
                 AgregarActionPerformed(evt);
             }
         });
-        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
+        jPanel1.add(Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 170, 40));
 
-        Lavar.setBackground(new java.awt.Color(255, 255, 0));
+        jPanel2.setBackground(new java.awt.Color(0, 41, 128));
+
+        Titulo.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
+        Titulo.setForeground(new java.awt.Color(204, 204, 204));
+        Titulo.setText("SODA FIDE");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(288, Short.MAX_VALUE)
+                .addComponent(Titulo)
+                .addGap(274, 274, 274))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(Titulo)
+                .addContainerGap(36, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, -1));
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 51));
+
+        VerP.setBackground(new java.awt.Color(255, 255, 255));
+        VerP.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        VerP.setForeground(new java.awt.Color(0, 0, 153));
+        VerP.setText("VER PLATOS PARA LAVAR");
+        VerP.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        VerP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VerPMouseClicked(evt);
+            }
+        });
+        VerP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VerPActionPerformed(evt);
+            }
+        });
+
+        Lavar.setBackground(new java.awt.Color(255, 255, 255));
         Lavar.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        Lavar.setForeground(new java.awt.Color(0, 0, 0));
+        Lavar.setForeground(new java.awt.Color(0, 0, 153));
         Lavar.setText("LAVAR PLATOS");
+        Lavar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Lavar.setEnabled(false);
         Lavar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -104,12 +149,39 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
                 LavarActionPerformed(evt);
             }
         });
-        jPanel1.add(Lavar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, -1, -1));
 
-        VerO.setBackground(new java.awt.Color(255, 255, 0));
-        VerO.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        VerO.setForeground(new java.awt.Color(0, 0, 0));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(VerP, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(Lavar, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(Lavar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addComponent(VerP)
+                .addGap(79, 79, 79))
+        );
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 270, 300));
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 51));
+
+        VerO.setBackground(new java.awt.Color(255, 255, 255));
+        VerO.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        VerO.setForeground(new java.awt.Color(0, 0, 153));
         VerO.setText("VER ORDENES PENDIENTES");
+        VerO.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         VerO.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 VerOMouseClicked(evt);
@@ -120,28 +192,12 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
                 VerOActionPerformed(evt);
             }
         });
-        jPanel1.add(VerO, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
-        VerP.setBackground(new java.awt.Color(255, 255, 0));
-        VerP.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        VerP.setForeground(new java.awt.Color(0, 0, 0));
-        VerP.setText("VER PLATOS PARA LAVAR");
-        VerP.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                VerPMouseClicked(evt);
-            }
-        });
-        VerP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VerPActionPerformed(evt);
-            }
-        });
-        jPanel1.add(VerP, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, -1, -1));
-
-        Atender.setBackground(new java.awt.Color(255, 255, 0));
-        Atender.setFont(new java.awt.Font("Consolas", 0, 18)); // NOI18N
-        Atender.setForeground(new java.awt.Color(0, 0, 0));
+        Atender.setBackground(new java.awt.Color(255, 255, 255));
+        Atender.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
+        Atender.setForeground(new java.awt.Color(0, 0, 153));
         Atender.setText("ATENDER ORDEN");
+        Atender.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         Atender.setEnabled(false);
         Atender.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -159,18 +215,34 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
                 AtenderActionPerformed(evt);
             }
         });
-        jPanel1.add(Atender, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 640, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(Atender, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(VerO, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(Atender)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addComponent(VerO)
+                .addGap(75, 75, 75))
         );
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 250, 300));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -332,5 +404,8 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
     private javax.swing.JButton VerO;
     private javax.swing.JButton VerP;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }
