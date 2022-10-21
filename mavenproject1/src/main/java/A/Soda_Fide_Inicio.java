@@ -245,7 +245,10 @@ public class Soda_Fide_Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton6MouseClicked
-        // TODO add your handling code here:
+        Orden_Atendida abrir=new Orden_Atendida();
+        
+        abrir.setVisible(true);
+        abrir.setOrden(General.Ordenes.AtenderOrder().getValue().getCliente());
     }//GEN-LAST:event_jButton6MouseClicked
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed

@@ -15,7 +15,7 @@ public class General {
         Cola ordenes= new Cola();
        
         
-        Orden Orden1=new Orden("Frander Rojas", 402520190, 1,0.00,false);
+        Orden Orden1=new Orden("Frander Rojas", 402520190,3,0.00,false);
         Orden Orden2=new Orden("Christian Madrigal", 402520191, 3,0.00,true);
         Orden Orden3=new Orden("Valeria Rojas", 402520192, 1,0.00,false);
         Orden Orden4=new Orden("Elena Nito", 402520190, 2,0.00,true);
