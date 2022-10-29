@@ -37,6 +37,23 @@ public class List {
 
     }
     
+    public void Eliminar(int ID){
+        if(Head!=null){
+            Nodo aux=Head;
+            Nodo Naux=Head.getNext();
+            if(ID==Head.getHumano().getId()){
+                Head=Head.getNext();
+            }
+            else{
+                while(Naux!=null){
+                    if(ID==Naux.getHumano().getId()){
+                        aux.setNext(Naux.getNext());
+                    }
+                }
+                System.out.println("No se encontró ID");
+            }
+        }
+    }
     public void imprimir(){
         Nodo aux=Head;
         while(aux!=null){

@@ -11,7 +11,7 @@ package com.mycompany.semana_7;
 public class Nodo {
     private Persona humano;
     private Nodo next;
-
+    
     public void setHumano(Persona humano) {
         this.humano = humano;
     }
