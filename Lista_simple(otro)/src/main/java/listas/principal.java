@@ -10,11 +10,7 @@ package listas;
  */
 public class principal {
     
-    /**
-     *
-     * @param args
-     */
-    
+ 
     public static void main (String[] args) {
     
         listaSimple l = new listaSimple();

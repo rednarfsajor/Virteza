@@ -1,7 +1,9 @@
 
-package grupo4.tarea_listas;
+package rednarf.lista_simple;
 
-public class Lista_Simple {
+
+
+public class Lista {
     private Nodo Head;
 
     public Nodo getHead() {
