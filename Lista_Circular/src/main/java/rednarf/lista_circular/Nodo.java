@@ -1,5 +1,5 @@
 
-package grupo4.tarea_listas;
+package rednarf.lista_circular;
 
 
 public class Nodo {

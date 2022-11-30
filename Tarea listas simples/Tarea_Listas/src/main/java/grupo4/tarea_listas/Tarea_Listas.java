@@ -2,6 +2,7 @@
 
 package grupo4.tarea_listas;
 
+import rednarf.lista_circular.Lista;
 import rednarf.lista_doble.Lista;
 
 

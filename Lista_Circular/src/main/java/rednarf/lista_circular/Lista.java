@@ -1,8 +1,10 @@
 
-package grupo4.tarea_listas;
+package rednarf.lista_circular;
 
 
-public class Lista_Circular {
+
+
+public class Lista {
     Nodo Head;
     Nodo Tail;
     
@@ -19,24 +21,7 @@ public class Lista_Circular {
             Tail.setNext(Head);
         }
     }
-    
-    public void LimpiarTail(int value){
-        if(Tail.getValue()==value){
-            
-            Nodo aux=Head;
-          while(aux.getNext()!=Tail){
-              aux=aux.getNext();
-          }
-          Tail=aux;
-          Tail.setNext(Head);
-          System.out.println("Tail Eliminado");
-          System.out.println("Nuevo Tail: " + Tail.getValue());
-        }
-        else{
-            System.out.println("Tail no tiene el valor " + value);
-        }
-        
-    }
+  
     
     public void EliminarIndex(int ID){
         Nodo Presente = Head;
@@ -59,7 +44,6 @@ public class Lista_Circular {
                 
                 if(Presente==Tail){
                     System.out.println("Valor Tail : " + Valor + " Eliminado");
-                    System.out.println("Nuevo Tail : " + Anterior.getValue());
                     Tail=Anterior;
                     Presente=null;
                     Tail.setNext(Head);
@@ -80,7 +64,6 @@ public class Lista_Circular {
         else if(ID==1){
             Valor=Head.getValue();
             System.out.println("Valor en el indice [" + ID + "] : " + Valor + " Eliminado");
-            System.out.println("El nuevo Head es: " + Head.getNext().getValue());
             Head=Head.getNext();
             Tail.setNext(Head);
         }
