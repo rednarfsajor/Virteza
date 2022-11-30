@@ -37,5 +37,23 @@ public class Tarea_Listas {
         Lista2.LimpiarTail(20);
         Lista2.LimpiarTail(27);
 */
+        
+        //Ejercicio 3 Lista Circular Doblemente Enlazada
+        
+        
+        Lista_Doble Lista3 = new Lista_Doble();
+        
+      Lista3.Insertar(27);
+      Lista3.Insertar(13);
+      Lista3.Insertar(34);
+      Lista3.Insertar(65);
+      Lista3.Insertar(2798);
+      Lista3.Insertar(27);
+      
+      Lista3.Mostrar();
+      
+      Lista3.EliminarIndex(5);
+      
+      Lista3.Mostrar();
     }
 }

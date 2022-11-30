@@ -45,7 +45,7 @@ public class Pila {
      public void Recorrer(Nodo newnodo, Nodo Anterior, Nodo Presente){
          if(Presente.getValue2().isCubiertos()){
              if(Presente.getNext()==null){
-                 Presente.setNext(newnodo);
+                 Anterior.setNext(newnodo);
              }
              else{
                  this.Recorrer(newnodo, Presente, Presente.getNext());

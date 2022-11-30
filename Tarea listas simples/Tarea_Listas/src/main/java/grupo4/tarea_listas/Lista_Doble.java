@@ -2,45 +2,43 @@
 package grupo4.tarea_listas;
 
 
-public class Lista_Circular {
-    Nodo Head;
-    Nodo Tail;
+public class Lista_Doble {
+    private NodoD Head;
+    private NodoD Tail;
     
     public void Insertar(int value){
-        Nodo newnodo = new Nodo(value);
-        if(Head==null){
+        NodoD newnodo = new NodoD(value);
+        if(Head==null && Tail==null){
             Head=newnodo;
+            Head.setNext(Tail);
             Tail=newnodo;
-            Tail.setNext(Head);
+            Tail.setBack(Head);
+            this.update();
         }
         else{
-            newnodo.setNext(Head);
-            Head=newnodo;
-            Tail.setNext(Head);
+            Tail.setNext(newnodo);
+            newnodo.setBack(Tail);
+            Tail=newnodo;
+            this.update();
         }
     }
     
-    public void LimpiarTail(int value){
-        if(Tail.getValue()==value){
-            
-            Nodo aux=Head;
-          while(aux.getNext()!=Tail){
-              aux=aux.getNext();
-          }
-          Tail=aux;
-          Tail.setNext(Head);
-          System.out.println("Tail Eliminado");
-          System.out.println("Nuevo Tail: " + Tail.getValue());
+    public void Mostrar(){
+        if(Head!=null){
+        NodoD Presente = Head;
+        int contador=1;
+        do{
+            System.out.println("["+contador+"] " + Presente.getValue());
+            Presente=Presente.getNext();
+            contador ++;
+        }while(Presente!=Head);
         }
-        else{
-            System.out.println("Tail no tiene el valor " + value);
-        }
-        
     }
+    
     
     public void EliminarIndex(int ID){
-        Nodo Presente = Head;
-        Nodo Anterior= Head;
+        NodoD Presente = Head;
+        NodoD Anterior= Head.getBack();
         int Valor=0;
         boolean aux=false;
         if(ID>1){
@@ -62,13 +60,13 @@ public class Lista_Circular {
                     System.out.println("Nuevo Tail : " + Anterior.getValue());
                     Tail=Anterior;
                     Presente=null;
-                    Tail.setNext(Head);
+                    this.update();
                 }
                 else{
                     System.out.println("Valor en el indice [" + ID + "] : " + Valor + " Eliminado");
                     Anterior.setNext(Presente.getNext());
                     Presente=null;
-                    Tail.setNext(Head);
+                    this.update();
                 }
                 
             }
@@ -82,21 +80,15 @@ public class Lista_Circular {
             System.out.println("Valor en el indice [" + ID + "] : " + Valor + " Eliminado");
             System.out.println("El nuevo Head es: " + Head.getNext().getValue());
             Head=Head.getNext();
-            Tail.setNext(Head);
+            this.update();
         }
         else{
             System.out.println("Se ingresó un indice no valido");
         }
     }
-    public void Mostrar(){
-        if(Head!=null){
-        Nodo Presente = Head;
-        int contador=1;
-        do{
-            System.out.println("["+contador+"] " + Presente.getValue());
-            Presente=Presente.getNext();
-            contador ++;
-        }while(Presente!=Head);
-        }
+    
+    public void update(){
+        Head.setBack(Tail);
+        Tail.setNext(Head);
     }
 }
