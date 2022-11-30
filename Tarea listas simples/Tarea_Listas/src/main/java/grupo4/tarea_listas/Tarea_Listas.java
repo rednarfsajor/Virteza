@@ -2,6 +2,8 @@
 
 package grupo4.tarea_listas;
 
+import rednarf.lista_doble.Lista;
+
 
 public class Tarea_Listas {
 
@@ -41,7 +43,7 @@ public class Tarea_Listas {
         //Ejercicio 3 Lista Circular Doblemente Enlazada
         
         
-        Lista_Doble Lista3 = new Lista_Doble();
+        Lista Lista3 = new Lista();
         
       Lista3.Insertar(27);
       Lista3.Insertar(13);

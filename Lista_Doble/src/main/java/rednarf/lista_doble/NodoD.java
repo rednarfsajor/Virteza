@@ -1,5 +1,5 @@
 
-package grupo4.tarea_listas;
+package rednarf.lista_doble;
 
 public class NodoD {
 

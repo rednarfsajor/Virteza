@@ -1,8 +1,10 @@
 
-package grupo4.tarea_listas;
+package rednarf.lista_doble;
 
 
-public class Lista_Doble {
+
+
+public class Lista {
     private NodoD Head;
     private NodoD Tail;
     
@@ -56,8 +58,7 @@ public class Lista_Doble {
                 
                 
                 if(Presente==Tail){
-                    System.out.println("Valor Tail : " + Valor + " Eliminado");
-                    System.out.println("Nuevo Tail : " + Anterior.getValue());
+                   System.out.println("Valor en el indice [" + ID + "] : " + Valor + " Eliminado");
                     Tail=Anterior;
                     Presente=null;
                     this.update();
@@ -78,7 +79,6 @@ public class Lista_Doble {
         else if(ID==1){
             Valor=Head.getValue();
             System.out.println("Valor en el indice [" + ID + "] : " + Valor + " Eliminado");
-            System.out.println("El nuevo Head es: " + Head.getNext().getValue());
             Head=Head.getNext();
             this.update();
         }
