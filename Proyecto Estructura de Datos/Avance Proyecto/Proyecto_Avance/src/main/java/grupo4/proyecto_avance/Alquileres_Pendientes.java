@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grupo4.proyecto_avance;
 
-/**
- *
- * @author Rednarf
- */
+
 public class Alquileres_Pendientes {
     private Nodo_Alquiler Head;
     private Nodo_Alquiler Tail;
@@ -35,6 +29,7 @@ public class Alquileres_Pendientes {
             Tail=newnodo;
         }
         else{
+            
             Nodo_Alquiler aux=Tail;
             aux.setNext(newnodo);
             Tail=newnodo;

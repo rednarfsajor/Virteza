@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grupo4.proyecto_avance;
 
-/**
- *
- * @author Rednarf
- */
+
 public class Vehiculo {
     private String placa;
     private String marca;
@@ -18,6 +12,20 @@ public class Vehiculo {
     private String combustible;
     private int capacidad;
     private double precio;
+
+    public Vehiculo(String placa, String marca, String modelo, int año, String color, int cilindrada, String combustible, int capacidad, double precio, String extras, char status) {
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.color = color;
+        this.cilindrada = cilindrada;
+        this.combustible = combustible;
+        this.capacidad = capacidad;
+        this.precio = precio;
+        this.extras = extras;
+        this.status = status;
+    }
     private String extras;
     private char status;
 

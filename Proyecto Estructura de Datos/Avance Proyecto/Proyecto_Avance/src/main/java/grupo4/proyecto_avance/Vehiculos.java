@@ -32,7 +32,7 @@ public class Vehiculos {
             Tail.setBack(Head);
         }
         else{
-            if(carro.getStatus()=='D'){
+            if(carro.getStatus()=='D'){ //D de  disponible
                 Nodo_Vehiculo aux=Head;
                 aux.setBack(newnodo);
                 newnodo.setNext(aux);
@@ -52,12 +52,12 @@ public class Vehiculos {
         Nodo_Vehiculo Presente=Head;
         boolean encontrado=false;
         if(Head!=null){
-        while(Presente!=null){
+        while(Presente!=null && !encontrado){
             if(carro.getPlaca().equals(Presente.getCarro().getPlaca())){
-                Nodo_Vehiculo newnodo = new Nodo_Vehiculo(carro);
-                newnodo.setNext(Presente.getNext());
-               Presente.getBack().setNext(newnodo);
-                Presente=null;
+                //Nodo_Vehiculo newnodo = new Nodo_Vehiculo(carro);
+                Presente.setCarro(carro);
+                //newnodo.setNext(Presente.getNext());
+               //Presente.getBack().setNext(newnodo);
                 encontrado=true;
             }
             else{
@@ -104,7 +104,7 @@ public class Vehiculos {
         boolean encontrado=false;
         String datos="DATOS DE AUTO\n";
         if(Head!=null){
-        while(Presente!=null){
+        while(Presente!=null  && !encontrado){
             if(placa.equals(Presente.getCarro().getPlaca())){
                 Vehiculo carro = Presente.getCarro();
                 datos+="\nEstado: ["+carro.getStatus()+"]\n"
@@ -119,7 +119,6 @@ public class Vehiculos {
                     + "Precio: ["+carro.getPrecio()+"]\n"
                     + "Extras: ["+carro.getExtras()+"]\n"
                     +"-----------------------------------------------------------------";
-                Presente=null;
                 encontrado=true;
             }
             else{

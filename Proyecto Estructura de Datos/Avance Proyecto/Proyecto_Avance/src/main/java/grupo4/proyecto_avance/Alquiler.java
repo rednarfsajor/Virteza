@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package grupo4.proyecto_avance;
 
-/**
- *
- * @author Rednarf
- */
+
 public class Alquiler {
     private String ID;
     private Cliente Persona;
@@ -16,6 +10,17 @@ public class Alquiler {
     private String Estado;
     private double monto;
 
+    public Alquiler(Cliente Persona, Vehiculo Carro, int Dias, String Estado, double monto) {
+        this.Persona = Persona;
+        this.Carro = Carro;
+        this.Dias = Dias;
+        this.Estado = Estado;
+        this.monto = monto+(monto*0.13);
+        
+        //this.ID=
+    }
+
+    
     public double getMonto() {
         return monto;
     }
