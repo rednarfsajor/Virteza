@@ -30,4 +30,27 @@ public class Alquileres {
         }
     }
     
+    public void modificar(String ID){
+        Nodo_Alquiler aux = Head;
+        boolean modificado = false;
+        if(Head!=null){
+            while(aux!=null & !modificado){
+                if(aux.getPrestamo().getID().equals(ID)){
+                    aux.getPrestamo().setEstado("PROCESADO");
+                    modificado = true;
+                }
+                else{
+                    aux=aux.getNext();
+                }
+            }
+            if(modificado){
+                //ALQUILER PROCESADO Y ACTUALIZADO
+            }
+            else{
+                //ERROR
+            }
+        }
+    }
+    
+   
 }
