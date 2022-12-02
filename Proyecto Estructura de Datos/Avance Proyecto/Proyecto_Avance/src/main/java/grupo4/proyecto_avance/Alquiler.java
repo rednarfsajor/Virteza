@@ -12,8 +12,30 @@ public class Alquiler {
     private String ID;
     private Cliente Persona;
     private Vehiculo Carro;
+    private int Dias;
     private String Estado;
+    private double monto;
 
+    public double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
+    
+    
+
+    public int getDias() {
+        return Dias;
+    }
+
+    public void setDias(int Dias) {
+        this.Dias = Dias;
+    }
+
+    
+    
     public void setID(String ID) {
         this.ID = ID;
     }

@@ -13,7 +13,7 @@ public class Cliente {
     private String Nombre_Completo;
     private String fecha;
     private String correo;
-    private String categoria;
+    private String categoria; //ZAFIRRO/ORO/PLATA/BRONCE 
 
     public void setCédula(int cédula) {
         this.cédula = cédula;

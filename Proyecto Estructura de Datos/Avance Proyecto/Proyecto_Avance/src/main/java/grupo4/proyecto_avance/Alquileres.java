@@ -28,6 +28,24 @@ public class Alquileres {
             newnodo.setNext(Head);
             Head=newnodo;
         }
+        if(alquiler.getDias()>=30){
+            switch(alquiler.getPersona().getCategoria()){
+                case "BRONCE":
+                        alquiler.getPersona().setCategoria("PLATA");
+                    break;
+                case "PLATA":
+                    alquiler.getPersona().setCategoria("ORO");
+                    
+                    break;
+                case "ORO":
+                    alquiler.getPersona().setCategoria("ZAFIRO");
+                    break;
+                default:
+                    
+                    break;
+            }
+            
+        }
     }
     
     public void modificar(String ID){
