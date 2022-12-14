@@ -103,13 +103,14 @@ public class Clientes {
     }
     public String search(int cedula){
         String datos="DATOS DE CLIENTE\n";
-        datos=buscar(Root,cedula);
+        datos+=buscar(Root,cedula);
         return datos;
     }
     public String buscar(Nodo_Cliente node, int cedula){
         String datos="";
-        int ced=node.getPersona().getCédula();
+       
         if(node!=null){
+             int ced=node.getPersona().getCédula();
         if(cedula>ced){
             buscar(node.getR(),cedula);
         }

@@ -1,13 +1,13 @@
-package Interfaz;
 
+package Interfaz;
 import Clases.*;
 
-public class MenuPrincipal extends javax.swing.JFrame {
+public class MenuAlquileres extends javax.swing.JFrame {
 
     /**
      * Creates new form RegistrarVehiculo
      */
-    public MenuPrincipal() {
+    public MenuAlquileres() {
         initComponents();
     }
 
@@ -24,10 +24,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jTextArea3 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        CLIENTES = new javax.swing.JButton();
-        VEHICULOS = new javax.swing.JButton();
-        ALQUILERES = new javax.swing.JButton();
+        EXIT = new javax.swing.JButton();
+        GENERATE = new javax.swing.JButton();
+        SEARCH = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
@@ -51,61 +50,47 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jPanel1.add(jLabel11);
         jLabel11.setBounds(170, 0, 80, 30);
 
-        jButton1.setText("SALIR");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        EXIT.setText("Atrás");
+        EXIT.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
+                EXITMouseClicked(evt);
             }
         });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        EXIT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                EXITActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(291, 410, 90, 20);
+        jPanel1.add(EXIT);
+        EXIT.setBounds(320, 410, 61, 20);
 
-        CLIENTES.setText("Clientes");
-        CLIENTES.addMouseListener(new java.awt.event.MouseAdapter() {
+        GENERATE.setText("Generar Alquiler");
+        GENERATE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                CLIENTESMouseClicked(evt);
+                GENERATEMouseClicked(evt);
             }
         });
-        CLIENTES.addActionListener(new java.awt.event.ActionListener() {
+        GENERATE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CLIENTESActionPerformed(evt);
+                GENERATEActionPerformed(evt);
             }
         });
-        jPanel1.add(CLIENTES);
-        CLIENTES.setBounds(120, 60, 150, 25);
+        jPanel1.add(GENERATE);
+        GENERATE.setBounds(120, 60, 150, 25);
 
-        VEHICULOS.setLabel("Vehiculos");
-        VEHICULOS.addMouseListener(new java.awt.event.MouseAdapter() {
+        SEARCH.setText("Consultar Alquiler");
+        SEARCH.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                VEHICULOSMouseClicked(evt);
+                SEARCHMouseClicked(evt);
             }
         });
-        VEHICULOS.addActionListener(new java.awt.event.ActionListener() {
+        SEARCH.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VEHICULOSActionPerformed(evt);
+                SEARCHActionPerformed(evt);
             }
         });
-        jPanel1.add(VEHICULOS);
-        VEHICULOS.setBounds(120, 110, 150, 25);
-
-        ALQUILERES.setText("Alquileres");
-        ALQUILERES.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ALQUILERESMouseClicked(evt);
-            }
-        });
-        ALQUILERES.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ALQUILERESActionPerformed(evt);
-            }
-        });
-        jPanel1.add(ALQUILERES);
-        ALQUILERES.setBounds(120, 160, 150, 25);
+        jPanel1.add(SEARCH);
+        SEARCH.setBounds(120, 110, 150, 25);
 
         jLabel1.setText("Territoy Car Rent");
         jPanel1.add(jLabel1);
@@ -125,43 +110,35 @@ public class MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CLIENTESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLIENTESActionPerformed
+    private void GENERATEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GENERATEActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_CLIENTESActionPerformed
+    }//GEN-LAST:event_GENERATEActionPerformed
 
-    private void VEHICULOSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VEHICULOSMouseClicked
-        MenuVehiculos ventana = new MenuVehiculos();
+    private void SEARCHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SEARCHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SEARCHActionPerformed
+
+    private void EXITActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXITActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EXITActionPerformed
+
+    private void EXITMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EXITMouseClicked
+        MenuPrincipal menu = new MenuPrincipal();
         this.setVisible(false);
-        ventana.setVisible(true);
-    }//GEN-LAST:event_VEHICULOSMouseClicked
+        menu.setVisible(true);
+    }//GEN-LAST:event_EXITMouseClicked
 
-    private void VEHICULOSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VEHICULOSActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_VEHICULOSActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        System.exit(0);
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void CLIENTESMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CLIENTESMouseClicked
-        MenuClientes ventana = new MenuClientes();
+    private void GENERATEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERATEMouseClicked
+        Generar_Alquiler ventana = new Generar_Alquiler();
         ventana.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_CLIENTESMouseClicked
+    }//GEN-LAST:event_GENERATEMouseClicked
 
-    private void ALQUILERESActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALQUILERESActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ALQUILERESActionPerformed
-
-    private void ALQUILERESMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ALQUILERESMouseClicked
-        MenuAlquileres ventana = new MenuAlquileres();
+    private void SEARCHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SEARCHMouseClicked
+        
         ventana.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_ALQUILERESMouseClicked
+    }//GEN-LAST:event_SEARCHMouseClicked
 
     /**
      * @param args the command line arguments
@@ -180,14 +157,42 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAlquileres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAlquileres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAlquileres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MenuAlquileres.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -196,16 +201,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPrincipal().setVisible(true);
+                new MenuAlquileres().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton ALQUILERES;
-    private javax.swing.JButton CLIENTES;
-    private javax.swing.JButton VEHICULOS;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton EXIT;
+    private javax.swing.JButton GENERATE;
+    private javax.swing.JButton SEARCH;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JPanel jPanel1;

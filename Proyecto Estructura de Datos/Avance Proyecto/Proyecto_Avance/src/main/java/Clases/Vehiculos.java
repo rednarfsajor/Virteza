@@ -1,6 +1,6 @@
 
 package Clases;
-
+import java.util.*;
 
 public class Vehiculos {
     private Nodo_Vehiculo Head;
@@ -190,6 +190,26 @@ public class Vehiculos {
             }
         }
         return auto;
+        }
+        
+        public ArrayList<Nodo_Vehiculo> filtrar(String model, String branch, int year, int passage, Nodo_Vehiculo node, ArrayList<Nodo_Vehiculo> lista){
+            if(node!=null){
+                Vehiculo carro=node.getCarro();
+                if("DISPONIBLE".equals(carro.getStatus())){
+                    if(!carro.getModelo().equals(model)&&!carro.getMarca().equals(branch)&&carro.getAño()!=year&&carro.getCapacidad()!=passage){
+                        filtrar(model,branch,year,passage,node.getNext(),lista);
+                    }
+                    else{
+                        lista.add(node);
+                        filtrar(model,branch,year,passage,node.getNext(), lista);
+                    }
+                }
+                else{
+                    filtrar(model,branch,year,passage,node.getNext(), lista);
+                }
+                    
+            }
+            return lista;
         }
     }
     
