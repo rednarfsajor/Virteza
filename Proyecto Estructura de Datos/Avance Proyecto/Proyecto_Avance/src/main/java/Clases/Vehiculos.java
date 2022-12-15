@@ -211,6 +211,78 @@ public class Vehiculos {
             }
             return lista;
         }
+        
+        
+        public ArrayList<Nodo_Vehiculo>Top5() {
+            ArrayList<Nodo_Vehiculo> top = new ArrayList();
+            if(Head!=null){
+                Nodo_Vehiculo aux=Head;
+                while(aux!=null){
+                    if(top.isEmpty()){
+                        top.add(aux);
+                    }
+                    else{
+                        top=comparar(aux,top);
+                    }
+                    aux=aux.getNext();
+                }
+            }
+            else{
+                top=null;
+            }
+            
+            
+            
+            
+            
+            
+            return top;
+        }
+        private ArrayList<Nodo_Vehiculo> comparar(Nodo_Vehiculo aux,ArrayList<Nodo_Vehiculo> top){
+                        boolean fin=false;
+                        int pepe=0;
+                        int can2=General.Alquileres_Registrados.cantidad(aux);
+                        while(!fin){
+                            int can1=General.Alquileres_Registrados.cantidad(top.get(pepe));
+                            
+                            if(can2>can1){
+                                if(top.size()==5){
+                                    for(int i=4;i>=top.indexOf(pepe);i--){
+                                        if(i>top.indexOf(pepe)){
+                                             top.set(i, top.get(i-1));
+                                        }
+                                        else{
+                                            top.set(i, aux);
+                                        }
+                                    }
+                                }
+                                else{
+                                    for(int i=top.size()-1;i>top.indexOf(pepe);i--){
+                                        if(i>top.indexOf(pepe)){
+                                            if(i==top.size()-1){
+                                                top.add(top.get(i));
+                                            }
+                                                top.set(i, top.get(i-1));
+                                        }
+                                        else{
+                                            top.set(i, aux);
+                                        }
+                                    }
+                                }
+                                fin=true;
+                            }
+                            else{
+                                pepe+=1;
+                                if(pepe>=top.size()){
+                                    fin=true;
+                                    if(pepe<5){
+                                        top.add(aux);
+                                    }
+                                }
+                            }
+                        }
+                        return top;
+        }
     }
     
     

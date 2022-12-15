@@ -1,6 +1,6 @@
 
 package Clases;
-
+import java.util.*;
 
 public class Alquiler {
     private String ID;
@@ -10,16 +10,24 @@ public class Alquiler {
     private String Estado;
     private double monto;
 
-    public Alquiler(Cliente Persona, Vehiculo Carro, int Dias, String Estado, double monto) {
+    public Alquiler(Cliente Persona, Vehiculo Carro, int Dias, double monto) {
         this.Persona = Persona;
         this.Carro = Carro;
         this.Dias = Dias;
-        this.Estado = Estado;
+        this.Estado = "REGISTRADO";
         this.monto = monto+(monto*0.13);
-        
-        //this.ID=
+        boolean val=false;
+        while(!val){
+            Random n = new Random();
+            this.ID="A-"+String.valueOf(n.nextInt(1000));
+            val=validation(this.ID);
+        }
     }
 
+    private boolean validation(String ID){
+        boolean V=General.Alquileres_Registrados.buscar(ID)==null;
+        return V;
+    }
     
     public double getMonto() {
         return monto;

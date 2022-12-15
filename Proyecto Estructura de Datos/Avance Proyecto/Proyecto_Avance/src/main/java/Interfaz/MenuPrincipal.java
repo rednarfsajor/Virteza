@@ -29,6 +29,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         VEHICULOS = new javax.swing.JButton();
         ALQUILERES = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        DEVOLUTION = new javax.swing.JButton();
+        ATTEND = new javax.swing.JButton();
+        NUMBERS = new javax.swing.JButton();
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -77,7 +80,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(CLIENTES);
-        CLIENTES.setBounds(120, 60, 150, 25);
+        CLIENTES.setBounds(120, 40, 150, 25);
 
         VEHICULOS.setLabel("Vehiculos");
         VEHICULOS.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -91,7 +94,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(VEHICULOS);
-        VEHICULOS.setBounds(120, 110, 150, 25);
+        VEHICULOS.setBounds(120, 90, 150, 25);
 
         ALQUILERES.setText("Alquileres");
         ALQUILERES.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -105,11 +108,50 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(ALQUILERES);
-        ALQUILERES.setBounds(120, 160, 150, 25);
+        ALQUILERES.setBounds(120, 140, 150, 25);
 
         jLabel1.setText("Territoy Car Rent");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(10, 420, 82, 15);
+
+        DEVOLUTION.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        DEVOLUTION.setText("Devolución");
+        DEVOLUTION.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DEVOLUTIONActionPerformed(evt);
+            }
+        });
+        jPanel1.add(DEVOLUTION);
+        DEVOLUTION.setBounds(120, 330, 150, 50);
+
+        ATTEND.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        ATTEND.setText("Atender Alquiler");
+        ATTEND.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ATTENDMouseClicked(evt);
+            }
+        });
+        ATTEND.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ATTENDActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ATTEND);
+        ATTEND.setBounds(120, 260, 150, 50);
+
+        NUMBERS.setText("Estadisticas");
+        NUMBERS.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NUMBERSMouseClicked(evt);
+            }
+        });
+        NUMBERS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NUMBERSActionPerformed(evt);
+            }
+        });
+        jPanel1.add(NUMBERS);
+        NUMBERS.setBounds(120, 190, 150, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -163,6 +205,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_ALQUILERESMouseClicked
 
+    private void DEVOLUTIONActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DEVOLUTIONActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DEVOLUTIONActionPerformed
+
+    private void ATTENDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ATTENDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ATTENDActionPerformed
+
+    private void NUMBERSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NUMBERSMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NUMBERSMouseClicked
+
+    private void NUMBERSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NUMBERSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NUMBERSActionPerformed
+
+    private void ATTENDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ATTENDMouseClicked
+        General.Alquileres_P.atender();
+    }//GEN-LAST:event_ATTENDMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -203,7 +265,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ALQUILERES;
+    private javax.swing.JButton ATTEND;
     private javax.swing.JButton CLIENTES;
+    private javax.swing.JButton DEVOLUTION;
+    private javax.swing.JButton NUMBERS;
     private javax.swing.JButton VEHICULOS;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

@@ -4,6 +4,7 @@
  */
 package Interfaz;
 import Clases.*;
+import javax.swing.*;
 /**
  *
  * @author Rednarf
@@ -27,6 +28,14 @@ public class Generar_Alquiler extends javax.swing.JFrame {
         Persona=persona;
         CLIENT.setText(persona.getNombre_Completo());
     }
+    private void reset(){
+        Persona=null;   Carro=null;
+        CLIENT.setText("[Seleccione cliente]");
+        CAR.setText("[Seleccione vehiculo]");
+        TIME.setText(""); TIME.setEnabled(false);
+        MONEY.setText(""); 
+        GENERATE.setEnabled(false);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -48,6 +57,7 @@ public class Generar_Alquiler extends javax.swing.JFrame {
         MONEY = new javax.swing.JTextField();
         EXIT = new javax.swing.JButton();
         GENERATE = new javax.swing.JButton();
+        RESET = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +95,11 @@ public class Generar_Alquiler extends javax.swing.JFrame {
                 CLIENTMouseClicked(evt);
             }
         });
+        CLIENT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CLIENTActionPerformed(evt);
+            }
+        });
 
         CAR.setText("[Seleccione vehiculo]");
         CAR.setEnabled(false);
@@ -94,6 +109,15 @@ public class Generar_Alquiler extends javax.swing.JFrame {
             }
         });
 
+        TIME.setEnabled(false);
+        TIME.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TIMEMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                TIMEMouseEntered(evt);
+            }
+        });
         TIME.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 TIMEKeyReleased(evt);
@@ -117,6 +141,24 @@ public class Generar_Alquiler extends javax.swing.JFrame {
         GENERATE.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 GENERATEMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                GENERATEMouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                GENERATEMousePressed(evt);
+            }
+        });
+
+        RESET.setText("Vaciar");
+        RESET.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RESETMouseClicked(evt);
+            }
+        });
+        RESET.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RESETActionPerformed(evt);
             }
         });
 
@@ -144,21 +186,26 @@ public class Generar_Alquiler extends javax.swing.JFrame {
                             .addGroup(SCREENLayout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(MONEY, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(SCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel1)
-                                .addGroup(SCREENLayout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(CLIENT, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 103, Short.MAX_VALUE)))
+                                .addComponent(MONEY, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 103, Short.MAX_VALUE))
+                    .addGroup(SCREENLayout.createSequentialGroup()
+                        .addGroup(SCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addGroup(SCREENLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CLIENT, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(RESET)))
                 .addContainerGap())
         );
         SCREENLayout.setVerticalGroup(
             SCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SCREENLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(SCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(RESET))
                 .addGap(18, 18, 18)
                 .addGroup(SCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -175,7 +222,7 @@ public class Generar_Alquiler extends javax.swing.JFrame {
                 .addGroup(SCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(MONEY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(SCREENLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EXIT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(GENERATE))
@@ -221,7 +268,7 @@ public class Generar_Alquiler extends javax.swing.JFrame {
     }//GEN-LAST:event_EXITMouseClicked
 
     private void SCREENComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_SCREENComponentShown
-        
+    
         
     }//GEN-LAST:event_SCREENComponentShown
 
@@ -246,11 +293,55 @@ public class Generar_Alquiler extends javax.swing.JFrame {
     private void GENERATEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERATEMouseClicked
         int dias=Integer.parseInt(TIME.getText());
         double monto=Double.parseDouble(MONEY.getText());
-        Alquiler Nuevo = new Alquiler(Persona,Carro,dias,"REGISTRADO",monto);
+        Alquiler Nuevo = new Alquiler(Persona,Carro,dias,monto);
         
         General.Alquileres_Registrados.Insertar(Nuevo);
         General.Alquileres_P.insertar(Nuevo);
+        /**/
+        
+        reset();
+        JOptionPane.showMessageDialog(null, "Alquiler " + Nuevo.getID() + " creado con éxito");
+        
+        
     }//GEN-LAST:event_GENERATEMouseClicked
+
+    private void GENERATEMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERATEMouseEntered
+        if(!CLIENT.getText().isBlank()&&!CAR.getText().isBlank()&&!TIME.getText().isBlank()&&!MONEY.getText().isBlank()){
+        GENERATE.setEnabled(true);
+    }
+        else{
+            GENERATE.setEnabled(false);
+        }
+    }//GEN-LAST:event_GENERATEMouseEntered
+
+    private void GENERATEMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERATEMousePressed
+        
+    }//GEN-LAST:event_GENERATEMousePressed
+
+    private void RESETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RESETActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RESETActionPerformed
+
+    private void RESETMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RESETMouseClicked
+        reset();
+    }//GEN-LAST:event_RESETMouseClicked
+
+    private void CLIENTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CLIENTActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CLIENTActionPerformed
+
+    private void TIMEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TIMEMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TIMEMouseClicked
+
+    private void TIMEMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TIMEMouseEntered
+        if(!CLIENT.getText().isBlank()&&!CAR.getText().isBlank()){
+            TIME.setEnabled(true);
+        }
+        else{
+            TIME.setEnabled(false);
+        }
+    }//GEN-LAST:event_TIMEMouseEntered
 
     /**
      * @param args the command line arguments
@@ -293,6 +384,7 @@ public class Generar_Alquiler extends javax.swing.JFrame {
     private javax.swing.JButton EXIT;
     private javax.swing.JButton GENERATE;
     private javax.swing.JTextField MONEY;
+    private javax.swing.JButton RESET;
     private javax.swing.JPanel SCREEN;
     private javax.swing.JTextField TIME;
     private javax.swing.JLabel jLabel1;

@@ -135,7 +135,7 @@ public class MenuAlquileres extends javax.swing.JFrame {
     }//GEN-LAST:event_GENERATEMouseClicked
 
     private void SEARCHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SEARCHMouseClicked
-        
+        ConsultarAlquiler ventana = new ConsultarAlquiler();
         ventana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_SEARCHMouseClicked
