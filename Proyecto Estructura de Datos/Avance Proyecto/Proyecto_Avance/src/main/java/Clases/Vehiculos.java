@@ -100,8 +100,10 @@ public class Vehiculos {
     }
     
     //Eliminar vehiculo
-    public void eliminar (String placa){
-        Nodo_Vehiculo Presente=Head;
+    public void eliminar (Vehiculo carro){
+        String placa=carro.getPlaca();
+        if("DISPONIBLE".equals(carro.getStatus())){
+            Nodo_Vehiculo Presente=Head;
         boolean encontrado=false;
         if(Head!=null){
         while(Presente!=null){
@@ -115,7 +117,7 @@ public class Vehiculos {
                         Head=null;
                     }
                 }
-                if(Presente==Tail){
+                else if(Presente==Tail){
                     try{
                         Tail=Tail.getBack();
                         Tail.setNext(null);
@@ -144,6 +146,11 @@ public class Vehiculos {
                 
             }
         }
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"El auto no se puede eliminar porque no esta disponible!", "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);
+        }
+        
     }
     //Leer vehiculo
     public String buscar(String placa){

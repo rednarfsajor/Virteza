@@ -207,9 +207,9 @@ public class Devolucion extends javax.swing.JFrame {
     private void DEVOLUTIONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DEVOLUTIONMouseClicked
         Vehiculo carro=Prestamo.getCarro();
         carro.setStatus("DISPONIBLE");
-        General.Vehiculos_Registrados.eliminar(carro.getPlaca());
+        General.Vehiculos_Registrados.eliminar(carro);
         General.Vehiculos_Registrados.insertar(carro);
-        General.Alquileres_Registrados.modificar(Prestamo.getID(), "FINALIZADA");
+        General.Alquileres_Registrados.modificar(Prestamo.getID(), "FINALIZADO");
         JOptionPane.showMessageDialog(null, "Alquiler " + Prestamo.getID() + "Finalizado. \n Devolución exitosa");
     }//GEN-LAST:event_DEVOLUTIONMouseClicked
 

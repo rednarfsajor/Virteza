@@ -4,6 +4,7 @@
  */
 package Interfaz;
 import Clases.*;
+import javax.swing.*;
 /**
  *
  * @author Fabián
@@ -256,10 +257,14 @@ public class ConsultarClientes extends javax.swing.JFrame {
 
     private void DELETEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEMouseClicked
        if(DELETE.isEnabled()){
-            General.Clientes_Registrados.eliminar(humano);
-            MenuPrincipal ventana = new MenuPrincipal();
+           int yesno=JOptionPane.showConfirmDialog(null, "¿Desea eliminar cliente?", "CONFIRMAR", JOptionPane.YES_NO_OPTION);
+           if(yesno==JOptionPane.YES_OPTION){
+               General.Clientes_Registrados.eliminar(humano);
+            ConsultarClientes ventana = new ConsultarClientes();
             ventana.setVisible(true);
             this.setVisible(false);
+           }
+            
        }
     }//GEN-LAST:event_DELETEMouseClicked
 

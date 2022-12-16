@@ -231,9 +231,12 @@ public class ConsultarVehículos extends javax.swing.JFrame {
 
     private void DELETEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEMouseClicked
         if(DELETE.isEnabled()){
-            int yesno=JOptionPane.showConfirmDialog(null, "¿Desea eliminar Vehículo?");
+            int yesno=JOptionPane.showConfirmDialog(null, "¿Desea eliminar Vehículo?", "CONFIRMAR", JOptionPane.YES_NO_OPTION);
             if(yesno==JOptionPane.YES_OPTION){
-                General.Vehiculos_Registrados.eliminar(Auto.getPlaca());
+                General.Vehiculos_Registrados.eliminar(Auto);
+                ConsultarVehículos ventana = new ConsultarVehículos();
+                ventana.setVisible(true);
+                this.setVisible(false);
             }
         }
     }//GEN-LAST:event_DELETEMouseClicked

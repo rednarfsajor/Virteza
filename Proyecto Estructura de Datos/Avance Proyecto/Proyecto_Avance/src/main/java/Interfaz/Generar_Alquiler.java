@@ -32,7 +32,7 @@ public class Generar_Alquiler extends javax.swing.JFrame {
         Persona=null;   Carro=null;
         CLIENT.setText("[Seleccione cliente]");
         CAR.setText("[Seleccione vehiculo]");
-        TIME.setText(""); TIME.setEnabled(false);
+        TIME.setText(""); TIME.setEnabled(false); TIME.setEditable(false);
         MONEY.setText(""); 
         GENERATE.setEnabled(false);
     }
@@ -349,10 +349,10 @@ public class Generar_Alquiler extends javax.swing.JFrame {
 
     private void TIMEMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TIMEMouseEntered
         if(!CLIENT.getText().isBlank()&&!CAR.getText().isBlank()){
-            TIME.setEnabled(true);
+            TIME.setEnabled(true); TIME.setEditable(true);
         }
         else{
-            TIME.setEnabled(false);
+            TIME.setEnabled(false); TIME.setEditable(false);
         }
     }//GEN-LAST:event_TIMEMouseEntered
 

@@ -75,7 +75,7 @@ public class Alquileres_Pendientes {
             Head=Head.getNext();
             General.Alquileres_Registrados.modificar(aux.getPrestamo().getID(),"PROCESADO");
             JOptionPane.showMessageDialog(null, "Alquiler " + aux.getPrestamo().getID() + " Procesado con exito!");
-            General.Vehiculos_Registrados.eliminar(aux.getPrestamo().getCarro().getPlaca());
+            General.Vehiculos_Registrados.eliminar(aux.getPrestamo().getCarro());
             aux.getPrestamo().getCarro().setStatus("ALQUILADO");
             General.Vehiculos_Registrados.insertar(aux.getPrestamo().getCarro());
         }
