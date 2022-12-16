@@ -120,12 +120,12 @@ public class Clientes {
     }
     
     public String printPersona(Cliente humano){
-        String datos="DATOS DE CLIENTE";
+        String datos="";
         datos+="\nCédula: ["+humano.getCédula()+"]\n"
                     +"Nombre Completo: ["+ humano.getNombre_Completo()+"]\n"
                     +"Fecha de Nacimiento: ["+ humano.getFecha()+"]\n"
                     +"Correo Electrónico: ["+ humano.getCorreo()+"]\n"
-                    +"Categoría: ["+ humano.getCategoria()+"]\n";
+                    +"Categoría: ["+ humano.getCategoria()+"]\n\n";
         return datos;
     }
     

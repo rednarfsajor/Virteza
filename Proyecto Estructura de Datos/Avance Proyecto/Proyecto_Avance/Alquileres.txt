@@ -1,26 +1,70 @@
-A-920
-402520190
-Frander Rojas
-20/07/2001
-franderrojas20@gmail.com
-BRONCE
-FR2
-BMW
+A-338
+987654321
+Christian Madrigal
+----------
+fran@gmail.com
+ZAFIRO
+drefrte
+Toyota
 Automóvil
 2016
 ROJO
 1500
 Disel
 3
-12.0
+9000.0
 
-DISPONIBLE
-20
+ALQUILADO
+2
+PROCESADO
+20340.0
+Fri Dec 16 17:11:11 CST 2022
+
+A-407
+987654321
+Christian Madrigal
+----------
+fran@gmail.com
+ZAFIRO
+drefrte
+Toyota
+Automóvil
+2016
+ROJO
+1500
+Disel
+3
+9000.0
+
+ALQUILADO
+1
 FINALIZADO
-271.2
-Fri Dec 16 04:43:00 CST 2022
+10170.0
+Fri Dec 16 17:10:42 CST 2022
 
-A-244
+A-724
+987654321
+Christian Madrigal
+----------
+fran@gmail.com
+ZAFIRO
+drefrte
+Toyota
+Automóvil
+2016
+ROJO
+1500
+Disel
+3
+9000.0
+
+ALQUILADO
+90
+FINALIZADO
+915300.0
+Fri Dec 16 17:09:28 CST 2022
+
+A-734
 987654321
 Christian Madrigal
 ----------
@@ -37,10 +81,10 @@ Gasolina
 190.0
 
 ALQUILADO
-90
+20
 PROCESADO
-19323.0
-Fri Dec 16 12:58:48 CST 2022
+4294.0
+Fri Dec 16 17:08:00 CST 2022
 
 A-555
 987654321
@@ -63,4 +107,48 @@ DISPONIBLE
 PROCESADO
 67.8
 Fri Dec 16 13:00:02 CST 2022
+
+A-244
+987654321
+Christian Madrigal
+----------
+fran@gmail.com
+ZAFIRO
+fr3-987
+BMW
+Automóvil
+2020
+ROJO
+1500
+Gasolina
+3
+190.0
+
+ALQUILADO
+90
+FINALIZADO
+19323.0
+Fri Dec 16 12:58:48 CST 2022
+
+A-920
+402520190
+Frander Rojas
+20/07/2001
+franderrojas20@gmail.com
+BRONCE
+FR2
+BMW
+Automóvil
+2016
+ROJO
+1500
+Disel
+3
+12.0
+
+DISPONIBLE
+20
+FINALIZADO
+271.2
+Fri Dec 16 04:43:00 CST 2022
 

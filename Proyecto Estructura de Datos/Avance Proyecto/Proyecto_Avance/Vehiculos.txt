@@ -1,27 +1,3 @@
-FR1
-Toyota
-Automóvil
-2016
-ROJO
-1500
-Disel
-3
-10000.0
-
-DISPONIBLE
-
-drefrte
-Toyota
-Automóvil
-2016
-ROJO
-1500
-Disel
-3
-9000.0
-
-DISPONIBLE
-
 fre5432
 Toyota
 Automóvil
@@ -34,6 +10,18 @@ Disel
 
 DISPONIBLE
 
+FR1
+Toyota
+Automóvil
+2016
+ROJO
+1500
+Disel
+3
+10000.0
+
+DISPONIBLE
+
 fr3-987
 BMW
 Automóvil
@@ -43,6 +31,18 @@ ROJO
 Gasolina
 3
 190.0
+
+ALQUILADO
+
+drefrte
+Toyota
+Automóvil
+2016
+ROJO
+1500
+Disel
+3
+9000.0
 
 ALQUILADO
 

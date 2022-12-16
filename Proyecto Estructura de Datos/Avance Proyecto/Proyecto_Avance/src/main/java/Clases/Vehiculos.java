@@ -156,7 +156,7 @@ public class Vehiculos {
     public String buscar(String placa){
         Nodo_Vehiculo Presente=Head;
         boolean encontrado=false;
-        String datos="DATOS DE AUTO\n";
+        String datos="\n";
         if(Head!=null){
         while(Presente!=null  && !encontrado){
             if(placa.equals(Presente.getCarro().getPlaca())){
@@ -298,13 +298,15 @@ public class Vehiculos {
                                 }
                                 else{
                                     for(int i=top.size()-1;i>=pepe;i--){
-                                        if(i>top.indexOf(pepe)){
-                                            if(i==top.size()-1){
+                                        if(i==top.size()-1){
                                                 top.add(top.get(i));
                                             }
+                                        if(i>pepe){
+                                            
                                                 top.set(i, top.get(i-1));
                                         }
                                         else{
+                                            
                                             top.set(i, aux);
                                         }
                                     }
@@ -313,9 +315,9 @@ public class Vehiculos {
                             }
                             else{
                                 pepe+=1;
-                                if(pepe>=top.size()){
+                                if(pepe==top.size()){
                                     fin=true;
-                                    if(pepe<5){
+                                    if(pepe<4){
                                         top.add(aux);
                                     }
                                 }

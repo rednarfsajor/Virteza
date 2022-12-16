@@ -166,7 +166,7 @@ public class Estadisticas extends javax.swing.JFrame {
             int num=1;
            top5=General.Clientes_Registrados.top5();
            for(Nodo_Cliente item:top5){
-               datos+="Num " + num + General.Clientes_Registrados.printPersona(item.getPersona());
+               datos+="Num " + num + "\n"+General.Clientes_Registrados.printPersona(item.getPersona());
                num+=1;
            }
            RESULT.setText(datos);
@@ -180,7 +180,7 @@ public class Estadisticas extends javax.swing.JFrame {
             int num=1;
            top5=General.Vehiculos_Registrados.Top5();
            for(Nodo_Vehiculo item:top5){
-               datos+="Num " + num + General.Vehiculos_Registrados.buscar(item.getCarro().getPlaca());
+               datos+="Num " + num +"\n"+ General.Vehiculos_Registrados.buscar(item.getCarro().getPlaca());
                num+=1;
            }
            RESULT.setText(datos);
