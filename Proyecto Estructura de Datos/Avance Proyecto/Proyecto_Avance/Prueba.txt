@@ -1,0 +1,16 @@
+DATOS DE CLIENTES
+
+Cédula: [1]
+Nombre Completo: [1]
+Fecha de Nacimiento: [1]
+Correo Electrónico: [1]
+Categoría: [BRONCE]
+---------------------------------------------------------------------------------
+
+Clases.Cliente@1b96ffb8
+Clases.Cliente@3302ace7
+Clases.Cliente@412add47
+Clases.Cliente@7e5c1dc3
+Clases.Cliente@6ffa27e3
+Clases.Cliente@3aed9ac7
+Clases.Cliente@416cb55f

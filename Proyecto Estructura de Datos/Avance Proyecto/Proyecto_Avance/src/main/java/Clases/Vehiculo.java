@@ -1,7 +1,6 @@
 package Clases;
 
 public class Vehiculo {
-
     private String placa;
     private String marca;
     private String modelo;
@@ -13,7 +12,7 @@ public class Vehiculo {
     private double precio;
     private String extras;
     private String status;
-
+    
     public Vehiculo(String placa, String marca, String modelo, int año, String color, int cilindrada, String combustible, int capacidad, double precio, String extras, String status) {
         this.placa = placa;
         this.marca = marca;
@@ -26,6 +25,22 @@ public class Vehiculo {
         this.precio = precio;
         this.extras = extras;
         this.status = status;
+    }
+
+    
+
+    public Vehiculo(String placa, String marca, String modelo, int año, String color, int cilindrada, String combustible, int capacidad, double precio, String extras) {
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.año = año;
+        this.color = color;
+        this.cilindrada = cilindrada;
+        this.combustible = combustible;
+        this.capacidad = capacidad;
+        this.precio = precio;
+        this.extras = extras;
+        this.status = "DISPONIBLE";
     }
 
     public String getStatus() {

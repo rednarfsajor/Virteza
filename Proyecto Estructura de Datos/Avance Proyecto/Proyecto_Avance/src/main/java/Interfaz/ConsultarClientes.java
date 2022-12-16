@@ -39,6 +39,8 @@ public class ConsultarClientes extends javax.swing.JFrame {
         SEARCHBOX = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         MODIFY = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TXTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,6 +103,10 @@ public class ConsultarClientes extends javax.swing.JFrame {
             }
         });
 
+        TXTA.setColumns(20);
+        TXTA.setRows(5);
+        jScrollPane1.setViewportView(TXTA);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -110,21 +116,27 @@ public class ConsultarClientes extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(32, 32, 32)
-                                .addComponent(TXTCLIENNTES, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGap(93, 93, 93)
-                                .addComponent(jLabel1)))
+                                .addComponent(jLabel1))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
+                                .addComponent(TXTCLIENNTES, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(SEARCHBOX, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SEARCH))
+                                .addGap(66, 66, 66)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addComponent(SEARCHBOX, javax.swing.GroupLayout.DEFAULT_SIZE, 114, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(SEARCH))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addGap(51, 51, 51)
+                                        .addComponent(jLabel2)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(51, 51, 51)
-                                .addComponent(jLabel2)
-                                .addGap(0, 0, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1))))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(97, 97, 97)
                         .addComponent(MODIFY)
@@ -146,21 +158,23 @@ public class ConsultarClientes extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(SEARCH)
+                            .addComponent(SEARCHBOX, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1))
+                    .addComponent(TXTCLIENNTES, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(TXTCLIENNTES, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(28, 28, 28)
-                                .addComponent(EXIT))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(MODIFY)
-                                    .addComponent(DELETE)))))
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(SEARCH)
-                        .addComponent(SEARCHBOX, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(28, 28, 28)
+                        .addComponent(EXIT))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(MODIFY)
+                            .addComponent(DELETE))))
                 .addContainerGap())
         );
 
@@ -189,14 +203,17 @@ public class ConsultarClientes extends javax.swing.JFrame {
     private void SEARCHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SEARCHMouseClicked
         String datos;
         if(SEARCHBOX.getText().isBlank()){
-            datos= General.Clientes_Registrados.inorden();
+            datos= General.Clientes_Registrados.mostrar();
             humano=null;
             MODIFY.setEnabled(false);
             DELETE.setEnabled(false);
+            TXTA.setText("");
         }
         else{
-            datos= General.Clientes_Registrados.search(Integer.parseInt(SEARCHBOX.getText()));
-            humano=General.Clientes_Registrados.getpersona(General.Clientes_Registrados.getRoot(),Integer.parseInt(SEARCHBOX.getText()));
+            humano=General.Clientes_Registrados.getPersona(Integer.parseInt(SEARCHBOX.getText()));
+            String a=General.Alquileres_Registrados.TodosDe(humano.getCédula());
+            datos= General.Clientes_Registrados.printPersona(humano);
+            TXTA.setText(a);
         }
         if(humano!=null){
             MODIFY.setEnabled(true);
@@ -205,9 +222,10 @@ public class ConsultarClientes extends javax.swing.JFrame {
         else{
             MODIFY.setEnabled(false);
             DELETE.setEnabled(false);
+            TXTA.setText("");
         }
         this.SetClientes(datos);
-       
+        
         
     }//GEN-LAST:event_SEARCHMouseClicked
 
@@ -229,7 +247,10 @@ public class ConsultarClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_MODIFYMouseClicked
 
     private void DELETEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEMouseClicked
-        
+        General.Clientes_Registrados.eliminar(humano);
+        MenuPrincipal ventana = new MenuPrincipal();
+        ventana.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_DELETEMouseClicked
 
     /**
@@ -272,9 +293,11 @@ public class ConsultarClientes extends javax.swing.JFrame {
     private javax.swing.JButton MODIFY;
     private javax.swing.JButton SEARCH;
     private javax.swing.JTextField SEARCHBOX;
+    private javax.swing.JTextArea TXTA;
     private java.awt.TextArea TXTCLIENNTES;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

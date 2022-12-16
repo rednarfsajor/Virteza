@@ -4,7 +4,7 @@
  */
 package Interfaz;
 import Clases.*;
-
+import java.io.*;
 /**
  *
  * @author Fabián
@@ -237,6 +237,7 @@ public class RegistrarCliente extends javax.swing.JFrame {
         
         Cliente persona=new Cliente(Ced,name,date,correo);
         General.Clientes_Registrados.insertar(persona);
+        
         
          MenuClientes menu = new MenuClientes();
         menu.setVisible(true);

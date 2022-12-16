@@ -32,6 +32,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         DEVOLUTION = new javax.swing.JButton();
         ATTEND = new javax.swing.JButton();
         NUMBERS = new javax.swing.JButton();
+        Guardar = new javax.swing.JToggleButton();
+        Cargar = new javax.swing.JToggleButton();
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -116,6 +118,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         DEVOLUTION.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         DEVOLUTION.setText("Devolución");
+        DEVOLUTION.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DEVOLUTIONMouseClicked(evt);
+            }
+        });
         DEVOLUTION.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DEVOLUTIONActionPerformed(evt);
@@ -152,6 +159,24 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         jPanel1.add(NUMBERS);
         NUMBERS.setBounds(120, 190, 150, 25);
+
+        Guardar.setText("Guardar");
+        Guardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GuardarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Guardar);
+        Guardar.setBounds(200, 410, 80, 25);
+
+        Cargar.setText("Cargar");
+        Cargar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CargarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Cargar);
+        Cargar.setBounds(100, 410, 90, 25);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -225,6 +250,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
         General.Alquileres_P.atender();
     }//GEN-LAST:event_ATTENDMouseClicked
 
+    private void DEVOLUTIONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DEVOLUTIONMouseClicked
+        Devolucion ventana = new Devolucion();
+        ventana.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_DEVOLUTIONMouseClicked
+
+    private void GuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GuardarMouseClicked
+        General.Vehiculos_Registrados.Guardar();
+        General.Clientes_Registrados.Guardar();
+        General.Alquileres_Registrados.Guardar();
+        General.Alquileres_P.Guardar();
+    }//GEN-LAST:event_GuardarMouseClicked
+
+    private void CargarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CargarMouseClicked
+        General.Vehiculos_Registrados.Cargar();
+        General.Clientes_Registrados.Cargar();
+        General.Alquileres_Registrados.Cargar();
+        General.Alquileres_P.Cargar();
+    }//GEN-LAST:event_CargarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -267,7 +312,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton ALQUILERES;
     private javax.swing.JButton ATTEND;
     private javax.swing.JButton CLIENTES;
+    private javax.swing.JToggleButton Cargar;
     private javax.swing.JButton DEVOLUTION;
+    private javax.swing.JToggleButton Guardar;
     private javax.swing.JButton NUMBERS;
     private javax.swing.JButton VEHICULOS;
     private javax.swing.JButton jButton1;

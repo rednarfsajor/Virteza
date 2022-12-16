@@ -129,7 +129,7 @@ public class MenuClientes extends javax.swing.JFrame {
 
     private void SEARCHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SEARCHMouseClicked
         ConsultarClientes ventana = new ConsultarClientes();
-        ventana.SetClientes(General.Clientes_Registrados.inorden());
+        ventana.SetClientes(General.Clientes_Registrados.mostrar());
         ventana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_SEARCHMouseClicked

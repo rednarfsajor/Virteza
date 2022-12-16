@@ -393,7 +393,7 @@ public class EditorVehiculos extends javax.swing.JFrame {
     
     //Fin de validaciones
     
-    Vehiculo Carro = new Vehiculo(placa,marca,modelo,año,color,cilindrada,combustible,capacidad,precio,extras,status);
+    Vehiculo Carro = new Vehiculo(placa,marca,modelo,año,color,cilindrada,combustible,capacidad,precio,extras);
     General.Vehiculos_Registrados.modificar(Carro);
     MenuVehiculos menu = new MenuVehiculos();
         menu.setVisible(true);

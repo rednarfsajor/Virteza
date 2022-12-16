@@ -170,14 +170,13 @@ public class Alquiler_Persona extends javax.swing.JFrame {
         int ced = Integer.parseInt(TXTID.getText());
         
         String datos;
-        datos=General.Clientes_Registrados.search(ced);
+        Persona=General.Clientes_Registrados.getPersona(ced);
+        datos=General.Clientes_Registrados.printPersona(Persona);
         TXTPERSON.setText(datos);
-        if(!"No se encontro cliente".equals(datos)){
-            Persona=General.Clientes_Registrados.getpersona(General.Clientes_Registrados.getRoot(), ced);
+        if(Persona!=null){
             CONTINUE.setEnabled(true);
         }
         else{
-            Persona=null;
             CONTINUE.setEnabled(false);
         }
     }//GEN-LAST:event_SEARCHMouseClicked

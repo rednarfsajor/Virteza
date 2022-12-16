@@ -9,6 +9,16 @@ public class Cliente {
     private String fecha;
     private String correo;
     private String categoria; //ZAFIRRO/ORO/PLATA/BRONCE 
+
+    public Cliente(int cédula, String Nombre_Completo, String fecha, String correo, String categoria) {
+        this.cédula = cédula;
+        this.Nombre_Completo = Nombre_Completo;
+        this.fecha = fecha;
+        this.correo = correo;
+        this.categoria = categoria;
+    }
+    
+    
     
     public Cliente(int cédula, String Nombre_Completo, String fecha, String correo) {
         this.cédula = cédula;

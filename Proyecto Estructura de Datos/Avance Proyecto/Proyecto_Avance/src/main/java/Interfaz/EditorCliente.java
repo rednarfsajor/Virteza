@@ -244,7 +244,7 @@ public class EditorCliente extends javax.swing.JFrame {
 
     private void EXITMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EXITMouseClicked
         ConsultarClientes ventana = new ConsultarClientes();
-        ventana.SetClientes(General.Clientes_Registrados.search(humano.getCédula()));
+        ventana.SetClientes(General.Clientes_Registrados.printPersona(humano));
         ventana.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_EXITMouseClicked
@@ -277,9 +277,9 @@ public class EditorCliente extends javax.swing.JFrame {
         
         
         Cliente persona=new Cliente(Ced,name,date,correo);
-        General.Clientes_Registrados.modificar(General.Clientes_Registrados.getRoot(),persona);
+        General.Clientes_Registrados.modificar(persona);
         
-         MenuClientes menu = new MenuClientes();
+        MenuClientes menu = new MenuClientes();
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_REGISTERMouseClicked

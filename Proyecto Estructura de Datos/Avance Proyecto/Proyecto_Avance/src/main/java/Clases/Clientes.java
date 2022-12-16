@@ -1,26 +1,20 @@
 
 package Clases;
-
+import java.util.*;
+import javax.swing.*;
+import java.io.*;
 
 public class Clientes {
     private Nodo_Cliente Root;
-    private int alt;
 
     public Nodo_Cliente getRoot() {
         return Root;
-    }
-
-    public int getAlt() {
-        return alt;
     }
 
     public void setRoot(Nodo_Cliente Root) {
         this.Root = Root;
     }
 
-    public void setAlt(int alt) {
-        this.alt = alt;
-    }
     
     public void insertar(Cliente persona){
         Nodo_Cliente newnodo = new Nodo_Cliente(persona);
@@ -51,10 +45,19 @@ public class Clientes {
             }
         }
     }
-   public String  inorden(){
+   public String  mostrar(){
        String datos="";
+       ArrayList<Nodo_Cliente> Clientes=new ArrayList(); 
         if(Root != null){
-            datos=inordenrecorrer(Root,datos);
+            Clientes=inordenrecorrer(Root,Clientes);
+            for(Nodo_Cliente node:Clientes){
+                datos+="\nCédula: ["+node.getPersona().getCédula()+"]\n"
+                    +"Nombre Completo: ["+ node.getPersona().getNombre_Completo()+"]\n"
+                    +"Fecha de Nacimiento: ["+ node.getPersona().getFecha()+"]\n"
+                    +"Correo Electrónico: ["+ node.getPersona().getCorreo()+"]\n"
+                    +"Categoría: ["+ node.getPersona().getCategoria()+"]\n"
+                    +"---------------------------------------------------------------------------------\n";
+            }
         }
         else{
             System.out.println("Arbol vacio");
@@ -62,103 +65,216 @@ public class Clientes {
         return "DATOS DE CLIENTES\n" + datos;
             }
     
-    private String inordenrecorrer(Nodo_Cliente node,String datos){
+    private ArrayList<Nodo_Cliente> inordenrecorrer(Nodo_Cliente node, ArrayList<Nodo_Cliente> clientes){
         
         if(node!=null){
-             datos+=inordenrecorrer(node.getL(),datos);
-             
-            datos="\nCédula: ["+node.getPersona().getCédula()+"]\n"
-                    +"Nombre Completo: ["+ node.getPersona().getNombre_Completo()+"]\n"
-                    +"Fecha de Nacimiento: ["+ node.getPersona().getFecha()+"]\n"
-                    +"Correo Electrónico: ["+ node.getPersona().getCorreo()+"]\n"
-                    +"Categoría: ["+ node.getPersona().getCategoria()+"]\n"
-                    +"---------------------------------------------------------------------------------\n";
-           
-            datos+=inordenrecorrer(node.getR(),datos);
-            return datos;
+            clientes=inordenrecorrer(node.getL(),clientes);
+            clientes.add(node);
+            clientes=inordenrecorrer(node.getR(),clientes);
+            return clientes;
         }
         else{
-            return "";
+            return clientes;
         }
         
     }
-    public Cliente getpersona(Nodo_Cliente node, int cedula){
-        Cliente persona=null;
-        int ced=node.getPersona().getCédula();
-        if(node!=null){
-        if(cedula>ced){
-            buscar(node.getR(),cedula);
+    
+    public Cliente getPersona(int cedula){
+        Nodo_Cliente node=Root;
+        while(node!=null){
+            int ced=node.getPersona().getCédula();
+            if(cedula>ced){
+            node=node.getR();
         }
         else if(cedula<ced){
-            buscar(node.getR(),cedula);
+            node=node.getL();
         }
         else if(cedula==ced){
-            persona=node.getPersona();
+            return node.getPersona();
         }
         }
-        else{
-            return null;
-        }
-        return persona;
+        return null;
     }
-    public String search(int cedula){
-        String datos="DATOS DE CLIENTE\n";
-        datos+=buscar(Root,cedula);
-        return datos;
-    }
-    public String buscar(Nodo_Cliente node, int cedula){
-        String datos="";
-       
-        if(node!=null){
-             int ced=node.getPersona().getCédula();
-        if(cedula>ced){
-            buscar(node.getR(),cedula);
-        }
-        else if(cedula<ced){
-            buscar(node.getR(),cedula);
-        }
-        else if(cedula==ced){
-            datos+="\nCédula: ["+node.getPersona().getCédula()+"]\n"
-                    +"Nombre Completo: ["+ node.getPersona().getNombre_Completo()+"]\n"
-                    +"Fecha de Nacimiento: ["+ node.getPersona().getFecha()+"]\n"
-                    +"Correo Electrónico: ["+ node.getPersona().getCorreo()+"]\n"
-                    +"Categoría: ["+ node.getPersona().getCategoria()+"]\n"
-                    +"---------------------------------------------------------------------------------\n";
-        }
-        }
-        else{
-            return "No se encontro cliente";
-        }
+    
+    public String printPersona(Cliente humano){
+        String datos="DATOS DE CLIENTE";
+        datos+="\nCédula: ["+humano.getCédula()+"]\n"
+                    +"Nombre Completo: ["+ humano.getNombre_Completo()+"]\n"
+                    +"Fecha de Nacimiento: ["+ humano.getFecha()+"]\n"
+                    +"Correo Electrónico: ["+ humano.getCorreo()+"]\n"
+                    +"Categoría: ["+ humano.getCategoria()+"]\n";
         return datos;
     }
     
-    public void modificar(Nodo_Cliente node, Cliente persona){
+    public void modificar(Cliente persona){
         int cedula=persona.getCédula();
-         int ced=node.getPersona().getCédula();
-        if(cedula>ced){
-            buscar(node.getR(),cedula);
+        
+        Nodo_Cliente node=Root;
+        while(node!=null){
+            int ced=node.getPersona().getCédula();
+            if(cedula>ced){
+            node=node.getR();
         }
         else if(cedula<ced){
-            buscar(node.getR(),cedula);
+            node=node.getL();
         }
         else if(cedula==ced){
             node.setPersona(persona);
+            break;
         }
+        }
+         
+        
     }
     
-    public void eliminar(Nodo_Cliente node, Cliente persona){
-         int cedula=persona.getCédula();
-         int ced=node.getPersona().getCédula();
-        if(cedula>ced){
-            buscar(node.getR(),cedula);
+    
+    public void eliminar(Cliente Humano){
+         if(Root!=null){
+                if(!General.Alquileres_Registrados.pendiente(Humano.getCédula())){
+                    Nodo_Cliente aux;
+                ArrayList<Cliente> Clientes=new ArrayList();
+                aux=getNodo(Humano);
+                Clientes=eliminados(aux,Clientes);
+                Clientes.remove(Clientes.size()-1);
+                for(Cliente item:Clientes){
+                    General.Clientes_Registrados.insertar(item);
+                }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,"El cliente aún tiene alquileres pendientes!", "ADVERTENCIA", JOptionPane.WARNING_MESSAGE);
+                }
+                
+         }
+    }
+    private void delete(int cedula){
+        if(Root.getPersona().getCédula()==cedula){
+            Root=null;
+        }
+        else{
+            Nodo_Cliente node=Root;
+        boolean fin=false;
+        while(!fin && node!=null){
+            int ced=node.getPersona().getCédula();
+            if(cedula>ced){
+                if(node.getR().getPersona().getCédula()==cedula){
+                    node.setR(null);
+                    fin=true;
+                }
+                else{
+                    node=node.getR();
+                }
+            
         }
         else if(cedula<ced){
-            buscar(node.getR(),cedula);
+            
+            if(node.getL().getPersona().getCédula()==cedula){
+                    node.setL(null);
+                    fin=true;
+                }
+            else{
+                node=node.getL();
+            }
+            
+        }
+        }
+        }
+        
+    }
+    private ArrayList<Cliente> eliminados(Nodo_Cliente node, ArrayList<Cliente> lista){
+        if(node!=null){
+            lista=eliminados(node.getL(),lista);
+           
+            lista=eliminados(node.getR(),lista);
+            lista.add(node.getPersona());
+            this.delete(node.getPersona().getCédula());
+            return lista;
+        }
+        else{
+            return lista;
+        }
+            
+    }
+    private Nodo_Cliente getNodo(Cliente Humano){
+        Nodo_Cliente node = Root;
+        int cedula = Humano.getCédula();
+        while(node!=null){
+            int ced=node.getPersona().getCédula();
+            if(cedula>ced){
+            node=node.getR();
+        }
+        else if(cedula<ced){
+            node=node.getL();
         }
         else if(cedula==ced){
-            //Eliminar
+            return node;
         }
+        }
+        return null;
     }
     
+    
+    public void Guardar(){
+         try{
+            FileWriter fw=new FileWriter("Clientes.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            ArrayList<Nodo_Cliente> Clientes = new ArrayList();
+            String datos="";
+            datos+=Root.getPersona().getCédula()+"\n"
+                    +Root.getPersona().getNombre_Completo()+"\n"
+                    +Root.getPersona().getFecha()+"\n"
+                    +Root.getPersona().getCorreo()+"\n"
+                    +Root.getPersona().getCategoria()+"\n";
+            pw.println(datos);
+            Clientes=inordenrecorrer(Root.getR(),Clientes);
+            for(Nodo_Cliente item:Clientes){
+                datos="";
+                datos+=item.getPersona().getCédula()+"\n"
+                    +item.getPersona().getNombre_Completo()+"\n"
+                    +item.getPersona().getFecha()+"\n"
+                    +item.getPersona().getCorreo()+"\n"
+                    +item.getPersona().getCategoria()+"\n";
+                 pw.println(datos);
+            }
+            
+            Clientes=inordenrecorrer(Root.getL(),Clientes);
+            for(Nodo_Cliente item:Clientes){
+                datos="";
+                datos+=item.getPersona().getCédula()+"\n"
+                    +item.getPersona().getNombre_Completo()+"\n"
+                    +item.getPersona().getFecha()+"\n"
+                    +item.getPersona().getCorreo()+"\n"
+                    +item.getPersona().getCategoria()+"\n";
+                 pw.println(datos);
+            }
+            pw.flush();
+            pw.close();
+            }
+            catch(Exception E){
+            
+        }
+        
+    }
+    
+    public void Cargar(){
+         try{
+                 FileReader fr = new FileReader("Clientes.txt");
+                 BufferedReader br = new BufferedReader(fr);
+                 String texto="";
+                 while(texto!=null){
+                     int cédula=Integer.parseInt(br.readLine()); 
+                     String Nombre_Completo=br.readLine();
+                     String fecha=br.readLine();
+                     String correo=br.readLine(); 
+                     String categoria=br.readLine();
+                     Cliente humano = new Cliente(cédula,Nombre_Completo,fecha,correo,categoria);
+                     this.insertar(humano);
+                     texto=br.readLine();
+                 }
+            }
+            catch(Exception E){
+                
+            }
+    }
     
 }

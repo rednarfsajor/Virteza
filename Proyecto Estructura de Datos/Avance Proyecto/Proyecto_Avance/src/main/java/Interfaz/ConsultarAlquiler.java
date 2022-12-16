@@ -154,7 +154,7 @@ public class ConsultarAlquiler extends javax.swing.JFrame {
 
     private void PStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_PStateChanged
        if(P.isSelected()){
-            String datos=General.Alquileres_Registrados.mostrar();
+            String datos=General.Alquileres_P.mostrar();
             RESULT.setText(datos);
         }
     }//GEN-LAST:event_PStateChanged

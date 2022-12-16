@@ -1,6 +1,7 @@
 
 package Clases;
 import javax.swing.*;
+import java.io.*;
 
 public class Alquileres_Pendientes {
     private Nodo_Alquiler Head;
@@ -95,6 +96,7 @@ public class Alquileres_Pendientes {
                         +"Días de Alquiler: ["+a.getDias()+"]\n"
                         +"Estado de Alquiler:  "+ a.getEstado()+"]\n"
                         +"Precio a Paga: ["+a.getMonto()+"]\n"
+                        +"Fecha: ["+a.getFecha()+"]\n"
                         +"---------------------------------------------------------------------";
                 aux=aux.getNext();
             }
@@ -104,4 +106,87 @@ public class Alquileres_Pendientes {
         }
         return datos;
     }
+    public void Guardar(){
+        try{
+            FileWriter fw=new FileWriter("AlquileresP.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            
+            Nodo_Alquiler nodo = Head;
+            
+            while(nodo!=null){
+                String datos="";
+                Alquiler a = nodo.getPrestamo();
+                datos+=a.getID()+"\n"
+                        +a.getPersona().getCédula()+"\n"
+                    +a.getPersona().getNombre_Completo()+"\n"
+                    +a.getPersona().getFecha()+"\n"
+                    +a.getPersona().getCorreo()+"\n"
+                    +a.getPersona().getCategoria()+"\n"
+                        +a.getCarro().getPlaca()+"\n"
+                        +a.getCarro().getMarca()+"\n"
+                        +a.getCarro().getModelo()+"\n"
+                        +a.getCarro().getAño()+"\n"
+                        +a.getCarro().getColor()+"\n"
+                        +a.getCarro().getCilindrada()+"\n"
+                        +a.getCarro().getCombustible()+"\n"
+                        +a.getCarro().getCapacidad()+"\n"
+                        +a.getCarro().getPrecio()+"\n"
+                        +a.getCarro().getExtras()+"\n"
+                        +a.getCarro().getStatus()+"\n"
+                        +a.getDias()+"\n"
+                        +a.getEstado()+"\n"
+                        +a.getMonto()+"\n"
+                        +a.getFecha()+"\n";
+            pw.println(datos);
+            nodo=nodo.getNext();
+            }
+            pw.flush();
+            pw.close();
+            }
+            catch(Exception E){
+            
+        }
+   }
+    public void Cargar(){
+       try{
+                 FileReader fr = new FileReader("AlquileresP.txt");
+                 BufferedReader br = new BufferedReader(fr);
+                 String texto="";
+                 while(texto!=null){
+                    String ID=br.readLine();
+                    int cédula=Integer.parseInt(br.readLine()); 
+                     String Nombre_Completo=br.readLine();
+                     String fecha=br.readLine();
+                     String correo=br.readLine(); 
+                     String categoria=br.readLine();
+                     Cliente humano = new Cliente(cédula,Nombre_Completo,fecha,correo,categoria);
+                    Cliente Persona=humano;
+                    String placa=br.readLine();
+                     String marca=br.readLine(); 
+                     String modelo=br.readLine(); 
+                     int año=Integer.parseInt(br.readLine());
+                     String color=br.readLine(); 
+                     int cilindrada=Integer.parseInt(br.readLine());
+                     String combustible=br.readLine(); 
+                     int capacidad=Integer.parseInt(br.readLine()); 
+                     double precio=Double.parseDouble(br.readLine());
+                     String extras=br.readLine();
+                     String estatus = br.readLine();
+                     Vehiculo carro = new Vehiculo(placa,marca,modelo,año,color,cilindrada,combustible,capacidad,precio,extras,estatus);
+                    Vehiculo Carro=carro;
+                    int Dias=Integer.parseInt(br.readLine());
+                    String Estado=br.readLine();
+                    double monto=Double.parseDouble(br.readLine());
+                    String Fecha=br.readLine();
+                     Alquiler alquiler = new Alquiler(ID,Persona,Carro,Dias,Estado,monto,Fecha);
+                     this.insertar(alquiler);
+                     texto=br.readLine();
+                 }
+            }
+            catch(Exception E){
+                
+            }
+       
+   }
 }

@@ -1,5 +1,6 @@
 
 package Clases;
+import java.io.*;
 import java.util.*;
 
 public class Vehiculos {
@@ -27,21 +28,28 @@ public class Vehiculos {
         Nodo_Vehiculo newnodo = new Nodo_Vehiculo(carro);
         if(Head ==  null){
             Head=newnodo;
-            Tail=newnodo;
         }
         else{
-            if("DISPONIBLE".equals(carro.getStatus())){ //D de  disponible
-                Nodo_Vehiculo aux=Head;
-                aux.setBack(newnodo);
-                newnodo.setNext(aux);
-                Head=newnodo;
+            if(Head.getNext()==null){
+                Tail=newnodo;
+                Tail.setBack(Head);
+                Head.setNext(Tail);
             }
             else{
-                Nodo_Vehiculo aux=Tail;
-                aux.setNext(newnodo);
-                newnodo.setBack(aux);
-                Tail=newnodo;
-                    }
+                if("DISPONIBLE".equals(carro.getStatus())){
+                    Nodo_Vehiculo aux=Head;
+                    aux.setBack(newnodo);
+                    newnodo.setNext(aux);
+                    Head=newnodo;
+                }
+                else{
+                    Nodo_Vehiculo aux=Tail;
+                    aux.setNext(newnodo);
+                    newnodo.setBack(aux);
+                    Tail=newnodo;
+                        }
+            }
+                
         }
     }
     
@@ -52,10 +60,9 @@ public class Vehiculos {
         if(Head!=null){
         while(Presente!=null && !encontrado){
             if(carro.getPlaca().equals(Presente.getCarro().getPlaca())){
-                //Nodo_Vehiculo newnodo = new Nodo_Vehiculo(carro);
+                
                 Presente.setCarro(carro);
-                //newnodo.setNext(Presente.getNext());
-               //Presente.getBack().setNext(newnodo);
+                
                 encontrado=true;
             }
             else{
@@ -79,12 +86,23 @@ public class Vehiculos {
         while(Presente!=null){
             if(placa.equals(Presente.getCarro().getPlaca())){
                 if(Presente==Head){
-                    Head.getNext().setBack(null);
-                    Head=Head.getNext();
+                    try{
+                        Head=Head.getNext();
+                        Head.setBack(null);
+                    }
+                    catch(NullPointerException ex){
+                        Head=null;
+                    }
                 }
-                else if(Presente==Tail){
-                    Tail.getBack().setNext(null);
-                    Tail=Tail.getBack();
+                if(Presente==Tail){
+                    try{
+                        Tail=Tail.getBack();
+                        Tail.setNext(null);
+                    }
+                    catch(NullPointerException ex){
+                        Tail=null;
+                    }
+                    
                 }
                 else{
                     Presente.getBack().setNext(Presente.getNext());
@@ -230,12 +248,6 @@ public class Vehiculos {
             else{
                 top=null;
             }
-            
-            
-            
-            
-            
-            
             return top;
         }
         private ArrayList<Nodo_Vehiculo> comparar(Nodo_Vehiculo aux,ArrayList<Nodo_Vehiculo> top){
@@ -283,7 +295,69 @@ public class Vehiculos {
                         }
                         return top;
         }
-    }
+        
+        public void Guardar(){
+            try{
+            FileWriter fw=new FileWriter("Vehiculos.txt");
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter pw = new PrintWriter(bw);
+            
+            Nodo_Vehiculo nodo = Head;
+            
+            while(nodo!=null){
+                String datos="";
+                Vehiculo carro = nodo.getCarro();
+                datos+=carro.getPlaca()+"\n"
+                        +carro.getMarca()+"\n"
+                        +carro.getModelo()+"\n"
+                        +carro.getAño()+"\n"
+                        +carro.getColor()+"\n"
+                        +carro.getCilindrada()+"\n"
+                        +carro.getCombustible()+"\n"
+                        +carro.getCapacidad()+"\n"
+                        +carro.getPrecio()+"\n"
+                        +carro.getExtras()+"\n"
+                        +carro.getStatus()+"\n";
+            pw.println(datos);
+            nodo=nodo.getNext();
+            }
+            pw.flush();
+            pw.close();
+            }
+            catch(Exception E){
+            
+        }
+        
+        }
+        
+        public void Cargar(){
+            try{
+                 FileReader fr = new FileReader("Vehiculos.txt");
+                 BufferedReader br = new BufferedReader(fr);
+                 String texto="";
+                 while(texto!=null){
+                     String placa=br.readLine();
+                     String marca=br.readLine(); 
+                     String modelo=br.readLine(); 
+                     int año=Integer.parseInt(br.readLine());
+                     String color=br.readLine(); 
+                     int cilindrada=Integer.parseInt(br.readLine());
+                     String combustible=br.readLine(); 
+                     int capacidad=Integer.parseInt(br.readLine()); 
+                     double precio=Double.parseDouble(br.readLine());
+                     String extras=br.readLine();
+                     String estatus = br.readLine();
+                     Vehiculo carro = new Vehiculo(placa,marca,modelo,año,color,cilindrada,combustible,capacidad,precio,extras,estatus);
+                     this.insertar(carro);
+                     texto=br.readLine();
+                 }
+            }
+            catch(Exception E){
+                
+            }
+           
+        }
+        }
     
     
 
