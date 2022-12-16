@@ -51,6 +51,7 @@ public class EditorCliente extends javax.swing.JFrame {
         TXTEMAIL = new javax.swing.JTextField();
         cate = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        WARNING = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,6 +110,11 @@ public class EditorCliente extends javax.swing.JFrame {
                 TXTCEDActionPerformed(evt);
             }
         });
+        TXTCED.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TXTCEDKeyReleased(evt);
+            }
+        });
 
         TXTNAME.setBackground(new java.awt.Color(255, 255, 255));
         TXTNAME.addActionListener(new java.awt.event.ActionListener() {
@@ -138,6 +144,9 @@ public class EditorCliente extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(51, 51, 51));
         jLabel8.setText("Categoría");
+
+        WARNING.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        WARNING.setForeground(new java.awt.Color(204, 0, 0));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -179,7 +188,9 @@ public class EditorCliente extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(123, 123, 123)
-                        .addComponent(cate)))
+                        .addComponent(cate)
+                        .addGap(18, 18, 18)
+                        .addComponent(WARNING)))
                 .addContainerGap(33, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -208,9 +219,15 @@ public class EditorCliente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(TXTEMAIL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(cate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addComponent(cate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(WARNING)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(REGISTER, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -272,21 +289,37 @@ public class EditorCliente extends javax.swing.JFrame {
         String correo=TXTEMAIL.getText();
         
         //Validaciones 
+         if(Ced>=100000000&&Ced<=999999999&&date.length()==10&&correo.contains("@")&&correo.contains(".")){
+             Cliente persona=new Cliente(Ced,name,date,correo);
+             General.Clientes_Registrados.modificar(persona);
+        
+            MenuClientes menu = new MenuClientes();
+            menu.setVisible(true);
+            this.setVisible(false);
+         }
+         else{
+             WARNING.setText("Formato de datos no válidos!");
+         }
         
         
         
         
-        Cliente persona=new Cliente(Ced,name,date,correo);
-        General.Clientes_Registrados.modificar(persona);
-        
-        MenuClientes menu = new MenuClientes();
-        menu.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_REGISTERMouseClicked
 
     private void REGISTERActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_REGISTERActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_REGISTERActionPerformed
+
+    private void TXTCEDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTCEDKeyReleased
+         try{
+            int ced;
+            ced=Integer.parseInt(TXTCED.getText());
+            
+        }
+        catch(NumberFormatException ex){
+            TXTCED.setText("");
+        }
+    }//GEN-LAST:event_TXTCEDKeyReleased
 
     /**
      * @param args the command line arguments
@@ -331,6 +364,7 @@ public class EditorCliente extends javax.swing.JFrame {
     private javax.swing.JTextField TXTEMAIL;
     private javax.swing.JTextField TXTFECHA;
     private javax.swing.JTextField TXTNAME;
+    private javax.swing.JLabel WARNING;
     private javax.swing.JLabel cate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

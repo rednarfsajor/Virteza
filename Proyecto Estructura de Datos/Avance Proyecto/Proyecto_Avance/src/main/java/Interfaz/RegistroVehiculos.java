@@ -59,6 +59,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         EXIT = new javax.swing.JButton();
         COMBOYEAR = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
+        WARNING = new javax.swing.JLabel();
 
         jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane3.setBorder(javax.swing.BorderFactory.createCompoundBorder());
@@ -167,6 +168,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         TXTMONEY.setColumns(20);
         TXTMONEY.setForeground(new java.awt.Color(0, 0, 0));
         TXTMONEY.setRows(5);
+        TXTMONEY.setText("0");
         TXTMONEY.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jScrollPane7.setViewportView(TXTMONEY);
 
@@ -321,6 +323,11 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         jPanel1.add(jLabel14);
         jLabel14.setBounds(60, 190, 126, 16);
 
+        WARNING.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        WARNING.setForeground(new java.awt.Color(204, 0, 0));
+        jPanel1.add(WARNING);
+        WARNING.setBounds(320, 410, 0, 0);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -371,17 +378,22 @@ public class RegistroVehiculos extends javax.swing.JFrame {
     double precio=Double.parseDouble(TXTMONEY.getText()); String extras=TXTEXTRA.getText(); String status=COMBOSTATUS.getSelectedItem().toString();
     
     //Validaciones
-    
+    if(placa.length()>=6 && precio>=0){
+        Vehiculo Carro = new Vehiculo(placa,marca,modelo,año,color,cilindrada,combustible,capacidad,precio,extras);
+    General.Vehiculos_Registrados.insertar(Carro);
+    MenuVehiculos menu = new MenuVehiculos();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }
+    else{
+        WARNING.setText("Formato de datos no validos!");
+    }
     
     
     
     //Fin de validaciones
     
-    Vehiculo Carro = new Vehiculo(placa,marca,modelo,año,color,cilindrada,combustible,capacidad,precio,extras);
-    General.Vehiculos_Registrados.insertar(Carro);
-    MenuVehiculos menu = new MenuVehiculos();
-        menu.setVisible(true);
-        this.setVisible(false);
+    
     
     
    
@@ -448,6 +460,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
     private javax.swing.JTextArea TXTEXTRA;
     private javax.swing.JTextArea TXTMONEY;
     private javax.swing.JTextArea TXTPLACA;
+    private javax.swing.JLabel WARNING;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

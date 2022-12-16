@@ -10,15 +10,39 @@ Disel
 
 DISPONIBLE
 
-FR2
-BMW
+drefrte
+Toyota
 Automóvil
 2016
 ROJO
 1500
 Disel
 3
-12.0
+9000.0
 
 DISPONIBLE
+
+fre5432
+Toyota
+Automóvil
+2016
+ROJO
+1500
+Disel
+3
+1000.0
+
+DISPONIBLE
+
+fr3-987
+BMW
+Automóvil
+2020
+ROJO
+1500
+Gasolina
+3
+190.0
+
+ALQUILADO
 

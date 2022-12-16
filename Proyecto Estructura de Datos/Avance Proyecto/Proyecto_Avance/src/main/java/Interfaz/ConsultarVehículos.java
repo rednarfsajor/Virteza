@@ -4,6 +4,7 @@
  */
 package Interfaz;
 import Clases.*;
+import javax.swing.*;
 /**
  *
  * @author Fabián
@@ -220,17 +221,21 @@ public class ConsultarVehículos extends javax.swing.JFrame {
     }//GEN-LAST:event_EXITMouseClicked
 
     private void MODIFYMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseClicked
+        if(MODIFY.isEnabled()){
         EditorVehiculos ventana = new EditorVehiculos();
         ventana.SetAuto(Auto);
         ventana.setVisible(true);
         this.setVisible(false);
+        }
     }//GEN-LAST:event_MODIFYMouseClicked
 
     private void DELETEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEMouseClicked
-        EliminarVehiculo ventana = new EliminarVehiculo();
-        ventana.SetAuto(Auto);
-        ventana.setVisible(true);
-        this.setVisible(false);
+        if(DELETE.isEnabled()){
+            int yesno=JOptionPane.showConfirmDialog(null, "¿Desea eliminar Vehículo?");
+            if(yesno==JOptionPane.YES_OPTION){
+                General.Vehiculos_Registrados.eliminar(Auto.getPlaca());
+            }
+        }
     }//GEN-LAST:event_DELETEMouseClicked
 
     /**

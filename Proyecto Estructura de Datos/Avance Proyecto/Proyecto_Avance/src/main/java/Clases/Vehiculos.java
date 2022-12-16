@@ -2,6 +2,7 @@
 package Clases;
 import java.io.*;
 import java.util.*;
+import javax.swing.*;
 
 public class Vehiculos {
     private Nodo_Vehiculo Head;
@@ -26,7 +27,8 @@ public class Vehiculos {
     //Insertar/crear vehiculo
     public void insertar(Vehiculo carro){
         Nodo_Vehiculo newnodo = new Nodo_Vehiculo(carro);
-        if(Head ==  null){
+        if(!validation(carro.getPlaca())){
+            if(Head ==  null){
             Head=newnodo;
         }
         else{
@@ -51,8 +53,27 @@ public class Vehiculos {
             }
                 
         }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Vehiculo ya existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+        
     }
     
+    private boolean validation(String placa){
+        Nodo_Vehiculo Presente=Head;
+        if(Head!=null){
+        while(Presente!=null){
+            if(placa.equals(Presente.getCarro().getPlaca())){
+                return true;
+            }
+            else{
+                Presente=Presente.getNext();
+            }
+        }
+    }
+        return false;
+    }
     //Modificar vehiculo
     public void modificar (Vehiculo carro){
         Nodo_Vehiculo Presente=Head;
@@ -253,14 +274,14 @@ public class Vehiculos {
         private ArrayList<Nodo_Vehiculo> comparar(Nodo_Vehiculo aux,ArrayList<Nodo_Vehiculo> top){
                         boolean fin=false;
                         int pepe=0;
-                        int can2=General.Alquileres_Registrados.cantidad(aux);
+                        int can2=General.Alquileres_Registrados.cantidad(aux.getCarro());
                         while(!fin){
                             int can1=General.Alquileres_Registrados.cantidad(top.get(pepe));
                             
                             if(can2>can1){
                                 if(top.size()==5){
-                                    for(int i=4;i>=top.indexOf(pepe);i--){
-                                        if(i>top.indexOf(pepe)){
+                                    for(int i=4;i>=pepe;i--){
+                                        if(i>pepe){
                                              top.set(i, top.get(i-1));
                                         }
                                         else{
@@ -269,7 +290,7 @@ public class Vehiculos {
                                     }
                                 }
                                 else{
-                                    for(int i=top.size()-1;i>top.indexOf(pepe);i--){
+                                    for(int i=top.size()-1;i>=pepe;i--){
                                         if(i>top.indexOf(pepe)){
                                             if(i==top.size()-1){
                                                 top.add(top.get(i));

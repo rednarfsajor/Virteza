@@ -161,7 +161,15 @@ public class Estadisticas extends javax.swing.JFrame {
 
     private void TOPCLIENTSStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_TOPCLIENTSStateChanged
        if (TOPCLIENTS.isSelected()){
-           
+            ArrayList<Nodo_Cliente> top5;
+            String datos="";
+            int num=1;
+           top5=General.Clientes_Registrados.top5();
+           for(Nodo_Cliente item:top5){
+               datos+="Num " + num + General.Clientes_Registrados.printPersona(item.getPersona());
+               num+=1;
+           }
+           RESULT.setText(datos);
        }
     }//GEN-LAST:event_TOPCLIENTSStateChanged
 

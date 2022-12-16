@@ -18,12 +18,18 @@ public class Clientes {
     
     public void insertar(Cliente persona){
         Nodo_Cliente newnodo = new Nodo_Cliente(persona);
-        if(Root==null){
+        if(!validation(persona.getCédula())){
+            if(Root==null){
             Root=newnodo;
         }
         else{
             inserta(Root,persona);
         }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Cliente ya existe", "Advertencia", JOptionPane.WARNING_MESSAGE);
+        }
+        
     }
     
      private void inserta(Nodo_Cliente node, Cliente value){
@@ -45,6 +51,23 @@ public class Clientes {
             }
         }
     }
+     
+     private boolean validation(int cedula){
+          Nodo_Cliente node=Root;
+        while(node!=null){
+            int ced=node.getPersona().getCédula();
+            if(cedula>ced){
+            node=node.getR();
+        }
+        else if(cedula<ced){
+            node=node.getL();
+        }
+        else if(cedula==ced){
+            return true;
+        }
+        }
+        return false;
+     }
    public String  mostrar(){
        String datos="";
        ArrayList<Nodo_Cliente> Clientes=new ArrayList(); 
@@ -123,6 +146,7 @@ public class Clientes {
             break;
         }
         }
+        
          
         
     }
@@ -277,4 +301,70 @@ public class Clientes {
             }
     }
     
+    public ArrayList<Nodo_Cliente> top5(){
+        ArrayList<Nodo_Cliente> top = new ArrayList();
+        ArrayList<Nodo_Cliente> Clientes = new ArrayList();
+            if(Root!=null){
+                Clientes=inordenrecorrer(Root,Clientes);
+                for(Nodo_Cliente aux:Clientes){
+                     top=comparar(aux,top);
+                }
+            }
+            else{
+                top=null;
+            }
+            return top;
+    }
+    
+     private ArrayList<Nodo_Cliente> comparar(Nodo_Cliente aux,ArrayList<Nodo_Cliente> top){
+                        if(top.isEmpty()){
+                            top.add(aux);
+                        }
+                        else{
+                            boolean fin=false;
+                        int pepe=0;
+                        int can2=General.Alquileres_Registrados.cantidad(aux.getPersona());
+                        while(!fin){
+                            int can1=General.Alquileres_Registrados.cantidad(top.get(pepe));
+                            
+                            if(can2>can1){
+                                if(top.size()==5){
+                                    for(int i=4;i>=pepe;i--){
+                                        if(i>pepe){
+                                             top.set(i, top.get(i-1));
+                                        }
+                                        else{
+                                            top.set(i, aux);
+                                        }
+                                    }
+                                }
+                                else{
+                                    for(int i=top.size()-1;i>pepe;i--){
+                                        if(i>pepe){
+                                            if(i==top.size()-1){
+                                                top.add(top.get(i));
+                                            }
+                                                top.set(i, top.get(i-1));
+                                        }
+                                        else{
+                                            top.set(i, aux);
+                                        }
+                                    }
+                                }
+                                fin=true;
+                            }
+                            else{
+                                pepe+=1;
+                                if(pepe>=top.size()){
+                                    fin=true;
+                                    if(pepe<5){
+                                        top.add(aux);
+                                    }
+                                }
+                            }
+                        }
+                        }
+                        
+                        return top;
+        }
 }

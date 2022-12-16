@@ -239,7 +239,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_ATTENDActionPerformed
 
     private void NUMBERSMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NUMBERSMouseClicked
-        // TODO add your handling code here:
+        Estadisticas ventana = new Estadisticas();
+        ventana.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_NUMBERSMouseClicked
 
     private void NUMBERSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NUMBERSActionPerformed

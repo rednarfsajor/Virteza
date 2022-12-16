@@ -291,13 +291,14 @@ public class Generar_Alquiler extends javax.swing.JFrame {
     }//GEN-LAST:event_TIMEKeyReleased
 
     private void GENERATEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERATEMouseClicked
+        if(GENERATE.isEnabled()){
         int dias=Integer.parseInt(TIME.getText());
         double monto=Double.parseDouble(MONEY.getText());
         Alquiler Nuevo = new Alquiler(Persona,Carro,dias,monto);
         
         General.Alquileres_Registrados.Insertar(Nuevo);
         General.Alquileres_P.insertar(Nuevo);
-        if(dias>=30){
+        if(dias>=30||monto>=70000){
              if(Persona.getCategoria().equals("BRONCE")){
                 Persona.setCategoria("PLATA");
             }
@@ -314,6 +315,7 @@ public class Generar_Alquiler extends javax.swing.JFrame {
             General.Clientes_Registrados.modificar(Persona);
         reset();
         JOptionPane.showMessageDialog(null, "Alquiler " + Nuevo.getID() + " creado con éxito");
+        }
     }//GEN-LAST:event_GENERATEMouseClicked
 
     private void GENERATEMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GENERATEMouseEntered

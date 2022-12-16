@@ -90,6 +90,11 @@ public class ConsultarClientes extends javax.swing.JFrame {
                 SEARCHBOXActionPerformed(evt);
             }
         });
+        SEARCHBOX.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SEARCHBOXKeyReleased(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -240,18 +245,34 @@ public class ConsultarClientes extends javax.swing.JFrame {
     }//GEN-LAST:event_EXITMouseClicked
 
     private void MODIFYMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MODIFYMouseClicked
-        EditorCliente ventana = new EditorCliente();
-        ventana.setVisible(true);
-        ventana.sethumano(humano);
-        this.setVisible(false);
+        if(MODIFY.isEnabled()){
+            EditorCliente ventana = new EditorCliente();
+            ventana.setVisible(true);
+            ventana.sethumano(humano);
+            this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_MODIFYMouseClicked
 
     private void DELETEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DELETEMouseClicked
-        General.Clientes_Registrados.eliminar(humano);
-        MenuPrincipal ventana = new MenuPrincipal();
-        ventana.setVisible(true);
-        this.setVisible(false);
+       if(DELETE.isEnabled()){
+            General.Clientes_Registrados.eliminar(humano);
+            MenuPrincipal ventana = new MenuPrincipal();
+            ventana.setVisible(true);
+            this.setVisible(false);
+       }
     }//GEN-LAST:event_DELETEMouseClicked
+
+    private void SEARCHBOXKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SEARCHBOXKeyReleased
+         try{
+            int ced;
+            ced=Integer.parseInt(SEARCHBOX.getText());
+            
+        }
+        catch(NumberFormatException ex){
+            SEARCHBOX.setText("");
+        }
+    }//GEN-LAST:event_SEARCHBOXKeyReleased
 
     /**
      * @param args the command line arguments

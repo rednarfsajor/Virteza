@@ -20,3 +20,47 @@ FINALIZADA
 271.2
 Fri Dec 16 04:43:00 CST 2022
 
+A-244
+987654321
+Christian Madrigal
+----------
+fran@gmail.com
+ZAFIRO
+fr3-987
+BMW
+Automóvil
+2020
+ROJO
+1500
+Gasolina
+3
+190.0
+
+ALQUILADO
+90
+PROCESADO
+19323.0
+Fri Dec 16 12:58:48 CST 2022
+
+A-555
+987654321
+Christian Madrigal
+----------
+fran@gmail.com
+ZAFIRO
+FR2
+BMW
+Automóvil
+2016
+ROJO
+1500
+Disel
+3
+12.0
+
+DISPONIBLE
+5
+PROCESADO
+67.8
+Fri Dec 16 13:00:02 CST 2022
+

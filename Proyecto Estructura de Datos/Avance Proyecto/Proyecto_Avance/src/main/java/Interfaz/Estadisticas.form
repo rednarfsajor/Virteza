@@ -94,7 +94,6 @@
               <ComponentRef name="NUMBERS"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Top 5 Clientes"/>
-            <Property name="actionCommand" type="java.lang.String" value="Top 5 Clientes"/>
           </Properties>
           <Events>
             <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="TOPCLIENTSStateChanged"/>
