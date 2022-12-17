@@ -199,14 +199,19 @@ public class Devolucion extends javax.swing.JFrame {
     }//GEN-LAST:event_ENTERMouseClicked
 
     private void DEVOLUTIONMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DEVOLUTIONMouseClicked
+        if(DEVOLUTION.isEnabled()){
         Vehiculo carro=Prestamo.getCarro();
         carro.setStatus("DISPONIBLE");
         General.Vehiculos_Registrados.eliminar(carro);
         General.Vehiculos_Registrados.insertar(carro);
         General.Alquileres_Registrados.modificar(Prestamo.getID(), "FINALIZADO");
         JOptionPane.showMessageDialog(null, "Alquiler " + Prestamo.getID() + "Finalizado. \n Devolución exitosa");
+        MenuPrincipal ventana = new MenuPrincipal();
+        ventana.setVisible(true);
+        this.setVisible(false);
+        }
+        
     }//GEN-LAST:event_DEVOLUTIONMouseClicked
-
     /**
      * @param args the command line arguments
      */
