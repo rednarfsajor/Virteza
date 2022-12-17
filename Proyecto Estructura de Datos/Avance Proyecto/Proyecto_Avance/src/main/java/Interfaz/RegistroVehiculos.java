@@ -147,6 +147,11 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         TXTMONEY.setRows(5);
         TXTMONEY.setText("0");
         TXTMONEY.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        TXTMONEY.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TXTMONEYKeyReleased(evt);
+            }
+        });
         jScrollPane7.setViewportView(TXTMONEY);
 
         jPanel1.add(jScrollPane7);
@@ -364,6 +369,17 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         menu.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_EXITMouseClicked
+
+    private void TXTMONEYKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TXTMONEYKeyReleased
+        try{
+            int money;
+            money=Integer.parseInt(TXTMONEY.getText());
+            
+        }
+        catch(NumberFormatException ex){
+            TXTMONEY.setText("");
+        }
+    }//GEN-LAST:event_TXTMONEYKeyReleased
 
     /**
      * @param args the command line arguments
