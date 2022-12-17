@@ -60,9 +60,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        jTextArea3.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea3.setColumns(20);
-        jTextArea3.setForeground(new java.awt.Color(0, 0, 0));
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
@@ -73,67 +71,56 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Número de placa:");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(80, 30, 99, 16);
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Marca del vehículo:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(70, 60, 109, 16);
 
         jLabel3.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Modelo del vehículo:");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(70, 100, 114, 16);
 
         jLabel4.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Año del vehículo:");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(80, 130, 95, 16);
 
         jLabel5.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Color del vehículo:");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(70, 160, 103, 16);
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("CC");
         jPanel1.add(jLabel6);
         jLabel6.setBounds(320, 200, 16, 16);
 
         jLabel7.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Tipo de combustible:");
         jPanel1.add(jLabel7);
         jLabel7.setBounds(60, 230, 117, 16);
 
         jLabel8.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Capacidad de pasajeros:");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(40, 270, 140, 16);
 
         jLabel9.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Precio de alquiler por día: $");
         jPanel1.add(jLabel9);
         jLabel9.setBounds(30, 310, 154, 16);
 
         jLabel10.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Información extra:");
         jPanel1.add(jLabel10);
         jLabel10.setBounds(40, 350, 104, 16);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Registro de Vehículos");
         jPanel1.add(jLabel11);
         jLabel11.setBounds(120, 0, 210, 30);
@@ -143,9 +130,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        TXTPLACA.setBackground(new java.awt.Color(255, 255, 255));
         TXTPLACA.setColumns(20);
-        TXTPLACA.setForeground(new java.awt.Color(0, 0, 0));
         TXTPLACA.setRows(5);
         TXTPLACA.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jScrollPane2.setViewportView(TXTPLACA);
@@ -158,9 +143,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         jScrollPane7.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane7.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        TXTMONEY.setBackground(new java.awt.Color(255, 255, 255));
         TXTMONEY.setColumns(20);
-        TXTMONEY.setForeground(new java.awt.Color(0, 0, 0));
         TXTMONEY.setRows(5);
         TXTMONEY.setText("0");
         TXTMONEY.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -169,9 +152,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         jPanel1.add(jScrollPane7);
         jScrollPane7.setBounds(190, 310, 110, 20);
 
-        COMBOC.setBackground(new java.awt.Color(255, 255, 255));
         COMBOC.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        COMBOC.setForeground(new java.awt.Color(0, 0, 0));
         COMBOC.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1500", "2000", "2500", "3000", "4000" }));
         COMBOC.setBorder(new javax.swing.border.MatteBorder(null));
         COMBOC.addActionListener(new java.awt.event.ActionListener() {
@@ -180,11 +161,9 @@ public class RegistroVehiculos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(COMBOC);
-        COMBOC.setBounds(190, 190, 130, 27);
+        COMBOC.setBounds(190, 190, 130, 22);
 
-        COMBOFUEL.setBackground(new java.awt.Color(255, 255, 255));
         COMBOFUEL.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        COMBOFUEL.setForeground(new java.awt.Color(0, 0, 0));
         COMBOFUEL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disel", "Gasolina", " " }));
         COMBOFUEL.setBorder(new javax.swing.border.MatteBorder(null));
         COMBOFUEL.addActionListener(new java.awt.event.ActionListener() {
@@ -193,11 +172,9 @@ public class RegistroVehiculos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(COMBOFUEL);
-        COMBOFUEL.setBounds(190, 230, 120, 27);
+        COMBOFUEL.setBounds(190, 230, 120, 22);
 
-        COMBOMOUNT.setBackground(new java.awt.Color(255, 255, 255));
         COMBOMOUNT.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        COMBOMOUNT.setForeground(new java.awt.Color(0, 0, 0));
         COMBOMOUNT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "3", "4", "5", "7", "8" }));
         COMBOMOUNT.setBorder(new javax.swing.border.MatteBorder(null));
         COMBOMOUNT.addActionListener(new java.awt.event.ActionListener() {
@@ -206,16 +183,14 @@ public class RegistroVehiculos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(COMBOMOUNT);
-        COMBOMOUNT.setBounds(190, 270, 110, 27);
+        COMBOMOUNT.setBounds(190, 270, 110, 22);
 
         jScrollPane9.setBackground(new java.awt.Color(255, 255, 255));
         jScrollPane9.setBorder(javax.swing.BorderFactory.createCompoundBorder());
         jScrollPane9.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane9.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        TXTEXTRA.setBackground(new java.awt.Color(255, 255, 255));
         TXTEXTRA.setColumns(20);
-        TXTEXTRA.setForeground(new java.awt.Color(0, 0, 0));
         TXTEXTRA.setRows(5);
         TXTEXTRA.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jScrollPane9.setViewportView(TXTEXTRA);
@@ -223,9 +198,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         jPanel1.add(jScrollPane9);
         jScrollPane9.setBounds(180, 340, 170, 30);
 
-        COMBOSTATUS.setBackground(new java.awt.Color(255, 255, 255));
         COMBOSTATUS.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        COMBOSTATUS.setForeground(new java.awt.Color(0, 0, 0));
         COMBOSTATUS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "DISPONIBLE", "ALQUILADO", "REPARACIÓN", "OUT" }));
         COMBOSTATUS.setBorder(new javax.swing.border.MatteBorder(null));
         COMBOSTATUS.addActionListener(new java.awt.event.ActionListener() {
@@ -234,25 +207,20 @@ public class RegistroVehiculos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(COMBOSTATUS);
-        COMBOSTATUS.setBounds(150, 390, 130, 27);
+        COMBOSTATUS.setBounds(150, 380, 130, 22);
 
         jLabel12.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Estado del vehículo");
         jPanel1.add(jLabel12);
-        jLabel12.setBounds(30, 390, 120, 16);
+        jLabel12.setBounds(30, 380, 120, 16);
 
-        COMBOCOLOR.setBackground(new java.awt.Color(255, 255, 255));
         COMBOCOLOR.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        COMBOCOLOR.setForeground(new java.awt.Color(0, 0, 0));
         COMBOCOLOR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ROJO", "AZUL", "AMARILLO", "VERDE", "NARANJA", "MORADO", "BLANCO", "NEGRO" }));
         COMBOCOLOR.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(COMBOCOLOR);
         COMBOCOLOR.setBounds(190, 160, 130, 22);
 
-        COMBOBRANCH.setBackground(new java.awt.Color(255, 255, 255));
         COMBOBRANCH.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        COMBOBRANCH.setForeground(new java.awt.Color(0, 0, 0));
         COMBOBRANCH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Toyota", "Nissan", "Honda", "Ford", "Hyndai", "Mitsubishi", "BMW", "Mazda" }));
         COMBOBRANCH.setBorder(new javax.swing.border.MatteBorder(null));
         COMBOBRANCH.addActionListener(new java.awt.event.ActionListener() {
@@ -261,11 +229,9 @@ public class RegistroVehiculos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(COMBOBRANCH);
-        COMBOBRANCH.setBounds(190, 60, 130, 27);
+        COMBOBRANCH.setBounds(190, 60, 130, 22);
 
-        COMBOMODEL.setBackground(new java.awt.Color(255, 255, 255));
         COMBOMODEL.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        COMBOMODEL.setForeground(new java.awt.Color(0, 0, 0));
         COMBOMODEL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Automóvil", "Pick up", "SUV", "4x4 Off-Road", " " }));
         COMBOMODEL.setBorder(new javax.swing.border.MatteBorder(null));
         COMBOMODEL.addActionListener(new java.awt.event.ActionListener() {
@@ -287,7 +253,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
 
         jLabel13.setText("Territoy Car Rent");
         jPanel1.add(jLabel13);
-        jLabel13.setBounds(10, 470, 82, 15);
+        jLabel13.setBounds(10, 470, 88, 16);
 
         EXIT.setText("Atrás");
         EXIT.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -301,18 +267,15 @@ public class RegistroVehiculos extends javax.swing.JFrame {
             }
         });
         jPanel1.add(EXIT);
-        EXIT.setBounds(390, 460, 61, 20);
+        EXIT.setBounds(390, 460, 72, 20);
 
-        COMBOYEAR.setBackground(new java.awt.Color(255, 255, 255));
         COMBOYEAR.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        COMBOYEAR.setForeground(new java.awt.Color(0, 0, 0));
         COMBOYEAR.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2016", "2017", "2018", "2019", "2020", "2021", "2022", " " }));
         COMBOYEAR.setBorder(new javax.swing.border.MatteBorder(null));
         jPanel1.add(COMBOYEAR);
         COMBOYEAR.setBounds(190, 130, 130, 22);
 
         jLabel14.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Cilindraje del vehículo:");
         jPanel1.add(jLabel14);
         jLabel14.setBounds(60, 190, 126, 16);
@@ -320,7 +283,7 @@ public class RegistroVehiculos extends javax.swing.JFrame {
         WARNING.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         WARNING.setForeground(new java.awt.Color(204, 0, 0));
         jPanel1.add(WARNING);
-        WARNING.setBounds(320, 410, 0, 0);
+        WARNING.setBounds(30, 410, 370, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
