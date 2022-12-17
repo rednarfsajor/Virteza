@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Clases;
 
-/**
- *
- * @author Rednarf
- */
 public class Nodo_Cliente {
     private Cliente Persona;
     private Nodo_Cliente R;
